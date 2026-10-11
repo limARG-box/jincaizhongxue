@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>湖南省宜州市湘西第十三中学</title>
+<title>福建省白州市瑾才中学</title>
 <style>
 :root{--primary-red:#7a2e2e;--gold:#c9b896;--paper:#f5f1e8;--text-dark:#3a3a3a;--text-gray:#7a7264;--border:#d8cfb8;}
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -26,9 +26,26 @@ body{font-family:"Microsoft YaHei","PingFang SC","Hiragino Sans GB","Heiti SC",s
 .s-nav .search-box input::placeholder{color:rgba(240,232,216,0.55);}
 .s-nav .search-box button{background:none;border:none;color:#f0e8d8;cursor:pointer;font-size:14px;}
 
-.hero{background:linear-gradient(135deg,#7a2e2e 0%,#4a1a1a 100%);height:360px;display:flex;flex-direction:column;justify-content:center;align-items:center;color:#f0e8d8;text-align:center;}
-.hero h1{font-family:"SimSun","Songti SC",serif;font-size:44px;margin-bottom:14px;letter-spacing:6px;text-shadow:2px 2px 0 rgba(0,0,0,.3);}
-.hero p{font-size:16px;opacity:.85;letter-spacing:2px;}
+.hero{
+  position:relative;
+  height:360px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  color:#f0e8d8;
+  text-align:center;
+  overflow:hidden;
+  background-image:
+    linear-gradient(135deg, rgba(122,46,46,.72) 0%, rgba(74,26,26,.82) 100%),
+    url('img1.png');
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+}
+.hero h1{font-family:"SimSun","Songti SC",serif;font-size:44px;margin-bottom:14px;letter-spacing:6px;text-shadow:2px 2px 6px rgba(0,0,0,.6);position:relative;z-index:1;}
+.hero p{font-size:16px;opacity:.92;letter-spacing:2px;text-shadow:1px 1px 4px rgba(0,0,0,.6);position:relative;z-index:1;}
+
 .stats-bar{background:#efe9db;border-top:1px solid var(--border);border-bottom:1px solid var(--border);display:flex;justify-content:space-around;padding:30px 20px;margin:30px 0;}
 .stat-item{text-align:center;}
 .stat-number{font-family:"Consolas",monospace;font-size:32px;color:var(--primary-red);font-weight:bold;}
@@ -37,7 +54,8 @@ body{font-family:"Microsoft YaHei","PingFang SC","Hiragino Sans GB","Heiti SC",s
 .section-title{font-family:"SimSun","Songti SC",serif;font-size:26px;color:var(--primary-red);border-left:4px solid var(--gold);padding-left:14px;margin-bottom:26px;}
 .news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
 .news-card{background:#fffdf8;border:1px solid var(--border);border-radius:2px;padding:20px;box-shadow:2px 2px 0 rgba(0,0,0,.05);}
-.news-thumb{width:100%;height:140px;background:#e8e0d0;border:1px solid var(--border);margin-bottom:14px;display:flex;align-items:center;justify-content:center;color:#b0a58e;font-size:12px;}
+.news-thumb{width:100%;height:140px;background:#e8e0d0;border:1px solid var(--border);margin-bottom:14px;display:flex;align-items:center;justify-content:center;color:#b0a58e;font-size:12px;overflow:hidden;position:relative;}
+.news-thumb img{width:100%;height:100%;object-fit:cover;display:block;}
 .news-card h3{font-family:"SimSun","Songti SC",serif;color:var(--primary-red);font-size:17px;margin-bottom:10px;}
 .news-card .date{color:var(--text-gray);font-size:12px;margin-bottom:8px;font-family:"Consolas",monospace;}
 .news-card p{color:#5a5548;font-size:14px;line-height:1.8;}
@@ -89,7 +107,10 @@ footer{background:#2e2a24;color:#a89c88;text-align:center;padding:26px 20px;font
 .notice-meta{font-size:12px;color:var(--text-gray);margin-bottom:18px;padding-bottom:14px;border-bottom:1px dashed var(--border);font-family:"Consolas",monospace;}
 .notice-card p{font-size:14px;line-height:2;color:#4a4538;margin-bottom:10px;}
 .notice-card .sign{text-align:right;margin-top:22px;font-size:13px;color:var(--text-gray);line-height:1.9;}
-.teacher-info{background:#f5f0e2;border-left:4px solid var(--gold);border-radius:2px;padding:16px 20px;margin:18px 0;}
+.notice-photo{width:100%;max-width:520px;margin:16px auto;display:block;border:1px solid var(--border);border-radius:2px;box-shadow:2px 2px 0 rgba(0,0,0,.05);}
+.teacher-info{background:#f5f0e2;border-left:4px solid var(--gold);border-radius:2px;padding:16px 20px;margin:18px 0;display:flex;gap:16px;align-items:flex-start;}
+.teacher-info .t-photo{width:88px;height:110px;object-fit:cover;border:1px solid var(--border);flex-shrink:0;background:#e8e0d0;}
+.teacher-info .t-text{flex:1;min-width:0;}
 .teacher-info h4{font-size:18px;color:#8a6a2a;margin-bottom:8px;}
 .teacher-info p{font-size:13px;line-height:1.9;color:#5a5548;margin-bottom:5px;}
 .back-link{display:inline-block;margin-top:8px;color:var(--primary-red);text-decoration:none;font-size:13px;cursor:pointer;}
@@ -111,7 +132,29 @@ footer{background:#2e2a24;color:#a89c88;text-align:center;padding:26px 20px;font
 #page-biologyhope .lab-banner{background:linear-gradient(135deg,#1a2a3a 0%,#0d1520 100%);height:220px;display:flex;flex-direction:column;justify-content:center;align-items:center;color:#e8eef4;text-align:center;}
 #page-biologyhope .lab-banner h1{font-size:34px;letter-spacing:3px;margin-bottom:10px;font-family:"Consolas","SF Mono","Menlo","Courier New","Microsoft YaHei",monospace;}
 #page-biologyhope .lab-banner p{font-size:14px;opacity:.7;font-family:"Consolas","SF Mono","Menlo","Courier New","Microsoft YaHei",monospace;}
-#page-biologyhope .lab-sub{font-size:13px;letter-spacing:2px;color:#c0392b;margin-top:6px;font-family:"Consolas","SF Mono","Menlo","Courier New","Microsoft YaHei",monospace;}
+#page-biologyhope .lab-sub{
+  font-size:13px;
+  letter-spacing:2px;
+  margin-top:8px;
+  padding:3px 12px;
+  border-radius:3px;
+  background:#0a121b;
+  color:#0a121b;
+  -webkit-text-fill-color:#0a121b;
+  font-family:"Consolas","SF Mono","Menlo","Courier New","Microsoft YaHei",monospace;
+  user-select:text;
+  -webkit-user-select:text;
+  cursor:text;
+}
+#page-biologyhope .lab-sub::selection{
+  background:rgba(192,57,43,.28);
+  color:#c0392b;
+  -webkit-text-fill-color:#c0392b;
+}
+#page-biologyhope .lab-sub::-moz-selection{
+  background:rgba(192,57,43,.28);
+  color:#c0392b;
+}
 #page-biologyhope .lab-wrap{max-width:1000px;margin:40px auto;padding:0 20px;}
 #page-biologyhope .lab-notice{background:#fff8e6;border-left:4px solid #c9b896;border-radius:2px;padding:14px 20px;margin-bottom:20px;font-size:13px;color:#7a6a3f;line-height:1.8;}
 #page-biologyhope .lab-login-bar{display:flex;gap:10px;align-items:center;background:#fffdf8;border:1px solid var(--border);border-radius:2px;padding:12px 16px;margin-bottom:20px;box-shadow:2px 2px 0 rgba(0,0,0,.05);flex-wrap:wrap;}
@@ -121,7 +164,7 @@ footer{background:#2e2a24;color:#a89c88;text-align:center;padding:26px 20px;font
 #page-biologyhope .bh-post-list{display:flex;flex-direction:column;gap:16px;}
 #page-biologyhope .bh-post{background:#fffdf8;border:1px solid var(--border);border-radius:2px;padding:18px;box-shadow:2px 2px 0 rgba(0,0,0,.05);display:flex;gap:14px;border-left:3px solid #1a2a3a;}
 #page-biologyhope .bh-avatar{width:44px;height:44px;border-radius:2px;background:#1a2a3a;color:#e8eef4;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0;font-family:"Consolas",monospace;}
-#page-biologyhope .bh-body{flex:1;}
+#page-biologyhope .bh-body{flex:1;min-width:0;}
 #page-biologyhope .bh-meta{font-size:12px;color:var(--text-gray);margin-bottom:6px;font-family:"Consolas",monospace;}
 #page-biologyhope .bh-meta .name{color:#1a2a3a;font-weight:700;margin-right:8px;font-family:"Microsoft YaHei",sans-serif;}
 #page-biologyhope .bh-body h3{font-family:"SimSun","Songti SC",serif;font-size:16px;margin-bottom:6px;color:#1a2a3a;}
@@ -175,6 +218,86 @@ footer{background:#2e2a24;color:#a89c88;text-align:center;padding:26px 20px;font
 .swarm span{position:absolute;color:#c0392b;font-weight:700;white-space:nowrap;opacity:0;text-shadow:0 0 10px rgba(192,57,43,.7);animation:swarmIn .45s ease forwards;}
 @keyframes swarmIn{from{opacity:0;transform:scale(.6);}to{opacity:1;transform:scale(1);}}
 
+.mail-btn{
+  position:fixed;left:20px;bottom:20px;z-index:1500;
+  width:52px;height:52px;border-radius:50%;
+  background:#c0392b;color:#fff;border:none;
+  font-size:22px;cursor:pointer;
+  box-shadow:0 6px 20px rgba(192,57,43,.4);
+  display:none;align-items:center;justify-content:center;
+  transition:transform .2s, background .2s;
+  font-family:inherit;
+}
+.mail-btn.show{display:flex;}
+.mail-btn:hover{transform:scale(1.08);background:#a02a1f;}
+.mail-btn .badge{
+  position:absolute;top:-4px;right:-4px;background:#f0883e;color:#1a2a3a;
+  font-size:11px;font-weight:700;min-width:18px;height:18px;
+  border-radius:9px;display:none;align-items:center;justify-content:center;
+  padding:0 5px;font-family:"Consolas",monospace;
+}
+.mail-btn .badge.show{display:flex;}
+.mail-btn .badge.pulse{animation:badgePulse 1.2s ease-in-out infinite;}
+@keyframes badgePulse{
+  0%,100%{transform:scale(1);box-shadow:0 0 0 0 rgba(240,136,62,.8);}
+  50%{transform:scale(1.15);box-shadow:0 0 0 6px rgba(240,136,62,0);}
+}
+
+.mail-panel{
+  position:fixed;top:0;right:0;bottom:0;width:360px;max-width:88vw;
+  background:#fffdf8;border-left:2px solid #c0392b;
+  box-shadow:-10px 0 30px rgba(0,0,0,.15);
+  transform:translateX(100%);
+  transition:transform .35s ease;
+  z-index:1501;display:flex;flex-direction:column;
+}
+.mail-panel.open{transform:translateX(0);}
+.mail-head{
+  background:#1a2a3a;color:#e8eef4;
+  padding:14px 18px;font-size:15px;font-weight:700;
+  display:flex;align-items:center;justify-content:space-between;
+  font-family:"Consolas",monospace;letter-spacing:1px;
+  border-bottom:2px solid #c0392b;
+}
+.mail-head button{
+  background:none;border:none;color:#e8eef4;font-size:20px;
+  cursor:pointer;padding:0 4px;font-family:inherit;
+}
+.mail-body{flex:1;overflow-y:auto;padding:16px;}
+.mail-empty{color:#a8a8a8;font-size:13px;text-align:center;padding:40px 10px;font-style:italic;}
+.mail-item{
+  background:#fff;border:1px solid var(--border);border-left:3px solid #c0392b;
+  border-radius:2px;padding:12px 14px;margin-bottom:12px;
+  font-size:13.5px;line-height:1.8;color:#4a4538;
+  box-shadow:1px 1px 0 rgba(0,0,0,.04);
+  animation:mailIn .4s ease;
+}
+@keyframes mailIn{
+  from{opacity:0;transform:translateY(10px);}
+  to{opacity:1;transform:translateY(0);}
+}
+.mail-item .m-meta{
+  font-size:11px;color:#a0a0a0;font-family:"Consolas",monospace;
+  margin-bottom:6px;
+}
+.mail-item .m-meta .m-from{color:#c0392b;font-weight:700;margin-right:8px;}
+
+.text-rain{
+  position:fixed;inset:0;pointer-events:none;z-index:1400;overflow:hidden;
+}
+.text-rain span{
+  position:absolute;top:-80px;
+  color:#c0392b;font-weight:700;white-space:nowrap;
+  text-shadow:0 0 10px rgba(192,57,43,.7);
+  animation:rainFall linear forwards;
+}
+@keyframes rainFall{
+  0%{transform:translateY(0);opacity:0;}
+  10%{opacity:1;}
+  85%{opacity:1;}
+  100%{transform:translateY(calc(100vh + 100px));opacity:0;}
+}
+
 @media (max-width:768px){
   .s-nav,.bh-nav{flex-direction:column;align-items:stretch;height:auto;padding:12px 16px;gap:10px;position:static;}
   .s-nav .logo,.bh-nav .logo{text-align:center;font-size:18px;}
@@ -217,6 +340,8 @@ footer{background:#2e2a24;color:#a89c88;text-align:center;padding:26px 20px;font
   #page-report .locked-box button{width:100%;margin:10px 0 0;display:block;}
   .intro-text{font-size:18px;letter-spacing:2px;padding:0 16px;line-height:1.5;}
   footer{padding:20px 12px;font-size:12px;}
+  .teacher-info{flex-direction:column;align-items:center;text-align:center;}
+  .teacher-info .t-photo{width:100px;height:125px;}
 }
 @media (max-width:480px){
   .hero h1{font-size:22px;}
@@ -232,10 +357,25 @@ footer{background:#2e2a24;color:#a89c88;text-align:center;padding:26px 20px;font
   <div class="swarm" id="swarm"></div>
 </div>
 
+<button class="mail-btn" id="mailBtn" onclick="toggleMail()" title="信息">
+  ✉
+  <span class="badge" id="mailBadge">1</span>
+</button>
+
+<aside class="mail-panel" id="mailPanel">
+  <div class="mail-head">
+    <span>▸ 内部信息</span>
+    <button onclick="toggleMail()">×</button>
+  </div>
+  <div class="mail-body" id="mailBody">
+    <div class="mail-empty">暂无新信息</div>
+  </div>
+</aside>
+
 <!-- 首页 -->
 <section class="page active" id="page-home">
   <nav class="s-nav">
-    <div class="logo" onclick="goHome()">湘西十三中</div>
+    <div class="logo" onclick="goHome()">瑾才中学</div>
     <div class="nav-right">
       <ul class="nav-links">
         <li><a onclick="goHome('sec-news')">校园资讯</a></li>
@@ -252,7 +392,7 @@ footer{background:#2e2a24;color:#a89c88;text-align:center;padding:26px 20px;font
       </div>
     </div>
   </nav>
-  <section class="hero"><h1>湖南省宜州市湘西第十三中学</h1><p>以人为本 · 追求卓越 | 创办于1902年 | 湖南省首批示范性普通高中</p></section>
+  <section class="hero"><h1>福建省白州市瑾才中学</h1><p>以人为本 · 追求卓越 | 创办于1902年 | 福建省首批示范性普通高中</p></section>
   <div class="stats-bar">
     <div class="stat-item"><div class="stat-number">1902</div><div class="stat-label">建校年份</div></div>
     <div class="stat-item"><div class="stat-number">8000+</div><div class="stat-label">在校学生</div></div>
@@ -262,17 +402,17 @@ footer{background:#2e2a24;color:#a89c88;text-align:center;padding:26px 20px;font
   <div class="s-container" id="sec-news">
     <h2 class="section-title">校园资讯</h2>
     <div class="news-grid" id="newsGrid">
-      <div class="news-card"><div class="news-thumb">校园活动照片</div><div class="date">2023-09-13</div><h3>湘西十三中成立绿色环保社团</h3><p>9月12日，在学校团委和社联的组织和指导下，湘西十三中绿色环保社团成立仪式在高新校区西梯形教室举行，共有30余名同学参加活动。</p></div>
-      <div class="news-card"><div class="news-thumb">安全演练照片</div><div class="date">2024-03-11</div><h3>预防恐怖暴力，维护校园安全</h3><p>春和景明，人间清欢。校园的安宁需要我们共同维护，增强防范意识，担当个人责任，共守安全壁垒。</p></div>
-      <div class="news-card"><div class="news-thumb">心理健康活动照片</div><div class="date">2023-06</div><h3>朋辈心理自助互助系列活动评选</h3><p>2022-2023学年，我校各班班级心理委员和“心情”心理社骨干积极开展朋辈心理自助互助，充分发挥了学生同伴在学校心理健康教育中的作用。</p></div>
-      <div class="news-card"><div class="news-thumb">教研活动照片</div><div class="date">2023-10-20</div><h3>生物教研组开展校本课题中期汇报</h3><p>10月19日，生物教研组在高新校区开展校本课题中期汇报。组长苏志明老师主持，罗克生老师就“神经生物学在中学教学中的应用”作专题汇报，生物竞赛组何雨桐、张子恒等同学参与展示。</p></div>
-      <div class="news-card"><div class="news-thumb">心理辅导活动照片</div><div class="date">2024-04-15</div><h3>高三年级开展考前心理辅导专题讲座</h3><p>4月12日，心理辅导中心许文静老师为高三年级作“考前情绪管理”专题讲座，高三年级组长陈慧敏老师主持。讲座后，各班心理委员组织开展了朋辈互助小组活动。</p></div>
+      <div class="news-card"><div class="date">2023-09-13</div><h3>瑾才中学成立绿色环保社团</h3><p>9月12日，在学校团委和社联的组织和指导下，瑾才中学绿色环保社团成立仪式在高新校区西梯形教室举行，共有30余名同学参加活动。社长由高二（3）班林文昌同学担任，副社长为高一（1）班周雨薇同学。</p></div>
+      <div class="news-card"><div class="date">2024-03-11</div><h3>预防恐怖暴力，维护校园安全</h3><p>春和景明，人间清欢。校园的安宁需要我们共同维护，增强防范意识，担当个人责任，共守安全壁垒。本次演练由保卫科科长黄德胜主持，各年级组配合完成。</p></div>
+      <div class="news-card"><div class="date">2023-06</div><h3>朋辈心理自助互助系列活动评选</h3><p>2022-2023学年，我校各班班级心理委员和“心情”心理社骨干积极开展朋辈心理自助互助，充分发挥了学生同伴在学校心理健康教育中的作用。评选出一等奖 6 名，二等奖 12 名。</p></div>
+      <div class="news-card"><div class="date">2023-10-20</div><h3>生物教研组开展校本课题中期汇报</h3><p>10月19日，生物教研组在高新校区开展校本课题中期汇报。组长<b>苏志明</b>老师主持，<b>罗克生</b>老师就“神经生物学在中学教学中的应用”作专题汇报，生物竞赛组<b>何雨桐、张子恒</b>等同学参与展示。全组教师共 12 人到场，另有 3 位外校教师观摩。</p></div>
+      <div class="news-card"><div class="date">2024-04-15</div><h3>高三年级开展考前心理辅导专题讲座</h3><p>4月12日，心理辅导中心<b>许文静</b>老师为高三年级作“考前情绪管理”专题讲座，高三年级组长<b>陈慧敏</b>老师主持。讲座后，各班心理委员组织开展了朋辈互助小组活动，覆盖高三全部 18 个班级。</p></div>
     </div>
     <div class="no-result" id="newsNoResult">没有找到相关内容</div>
   </div>
   <div class="s-container" id="sec-overview" style="background:#fffdf8;border:1px solid var(--border);border-radius:2px;box-shadow:2px 2px 0 rgba(0,0,0,.05);">
     <h2 class="section-title">学校概况</h2>
-    <p style="line-height:2;color:#5a5548;font-size:14px;">湖南省宜州市湘西第十三中学创办于1902年，是湘西州第一所官立中学堂，也是湘西地区最早的现代中学之一。百余年来，学校培养了4万多名毕业生，办学成绩卓著，被誉为“湘西教苑的长青之树”。学校形成完整的“一校三区”办学规模，先后获得“全国文明校园”“湖南省教育信息化示范学校”“湖南省中小学心理健康教育特色学校”“全国中学生生物学竞赛金牌学校”等荣誉称号，连续多年一本上线率居湘西州前列。</p>
+    <p style="line-height:2;color:#5a5548;font-size:14px;">福建省白州市瑾才中学创办于1902年，是白州市第一所官立中学堂，也是闽中地区最早的现代中学之一。百余年来，学校培养了4万多名毕业生，办学成绩卓著，被誉为“白州教苑的长青之树”。学校形成完整的“一校三区”办学规模，先后获得“全国文明校园”“福建省教育信息化示范学校”“福建省中小学心理健康教育特色学校”“<b>全国中学生生物学竞赛金牌学校</b>”等荣誉称号，连续多年一本上线率居白州市前列。</p>
   </div>
   <div class="s-container" id="sec-map">
     <h2 class="section-title">校园功能分区示意图</h2>
@@ -284,7 +424,7 @@ footer{background:#2e2a24;color:#a89c88;text-align:center;padding:26px 20px;font
     <h2 class="section-title">教学教研</h2>
     <div class="simple-list">
       <div class="simple-item"><h4>课程体系</h4><p>构建基础型、拓展型、研究型三类课程，覆盖人文、科学、艺术、体育等领域。</p></div>
-      <div class="simple-item"><h4>科创中心</h4><p>设有 FABLAB 创智空间，开设生物工程、机器人、3D 打印等校本课程。生物教研组由苏志明老师任组长，长期承担竞赛指导，近三年累计获奖 47 人次。</p></div>
+      <div class="simple-item"><h4>科创中心</h4><p>设有 FABLAB 创智空间，开设生物工程、机器人、3D 打印等校本课程。生物教研组由<b>苏志明</b>老师任组长，长期承担竞赛指导，近三年累计获奖 47 人次，其中省级以上 11 人次。</p></div>
       <div class="simple-item"><h4>教育信息化</h4><p>自研教学管理资源平台，实现备课、作业、测评一体化。</p></div>
     </div>
   </div>
@@ -292,22 +432,22 @@ footer{background:#2e2a24;color:#a89c88;text-align:center;padding:26px 20px;font
     <h2 class="section-title">德育园地</h2>
     <div class="simple-list">
       <div class="simple-item"><h4>社团活动</h4><p>现有学术、艺术、体育、公益类社团 40 余个，每年举办社团文化节。</p></div>
-      <div class="simple-item"><h4>心理健康</h4><p>为湖南省中小学心理健康教育特色学校，设有心理辅导中心与朋辈互助机制。心理辅导中心由许文静老师负责，每学期开展个体辅导与团体辅导。</p></div>
+      <div class="simple-item"><h4>心理健康</h4><p>为福建省中小学心理健康教育特色学校，设有心理辅导中心与朋辈互助机制。心理辅导中心由<b>许文静</b>老师负责，每学期开展个体辅导与团体辅导。</p></div>
       <div class="simple-item"><h4>志愿服务</h4><p>长期开展社区服务、环保行动、支教帮扶等志愿项目。</p></div>
     </div>
   </div>
   <div class="s-container" id="sec-admission">
     <h2 class="section-title">招生招聘</h2>
     <div class="simple-list">
-      <div class="simple-item"><h4>高中招生</h4><p>面向宜州市及湘西州招收初中毕业生，含自主招生与统招两类。每年均有学生考入清华、北大等顶尖高校，具体以当年公告为准。</p></div>
+      <div class="simple-item"><h4>高中招生</h4><p>面向白州市招收初中毕业生，含自主招生与统招两类。每年均有学生考入清华、北大等顶尖高校，具体以当年公告为准。</p></div>
       <div class="simple-item"><h4>国际部</h4><p>开设国际课程班，面向有海外升学意向的学生。</p></div>
       <div class="simple-item"><h4>教师招聘</h4><p>常年招聘各学科优秀教师，有意者请关注学校公告。</p></div>
     </div>
   </div>
   <footer>
-    <div class="footer-links">友情链接：湘西州教育信息网 | 湖南省教育厅 | 湘西十三中校友会</div>
-    <p>湖南省宜州市湘西第十三中学 | 本部：宜州市十三中路 | 高新校区：宜州市高新区文华路</p>
-    <p>Copyright © 1902-2024 湖南省宜州市湘西第十三中学 版权所有</p>
+    <div class="footer-links">友情链接：白州市教育信息网 | 福建省教育厅 | 瑾才中学校友会</div>
+    <p>福建省白州市瑾才中学 | 本部：白州市解放路 | 高新校区：白州市高新区文华路</p>
+    <p>Copyright © 1902-2024 福建省白州市瑾才中学 版权所有</p>
     <p style="margin-top:8px;font-size:12px;">本页面为学习模仿用途，非官方站点</p>
   </footer>
 </section>
@@ -315,7 +455,7 @@ footer{background:#2e2a24;color:#a89c88;text-align:center;padding:26px 20px;font
 <!-- 学生论坛 -->
 <section class="page" id="page-forum">
   <nav class="s-nav">
-    <div class="logo" onclick="goHome()">湘西十三中</div>
+    <div class="logo" onclick="goHome()">瑾才中学</div>
     <div class="nav-right">
       <ul class="nav-links">
         <li><a onclick="goHome()">首页</a></li>
@@ -340,19 +480,20 @@ footer{background:#2e2a24;color:#a89c88;text-align:center;padding:26px 20px;font
       <button onclick="addPost()">发布</button>
     </div>
     <div class="forum-list" id="postList">
-      <div class="forum-item"><div class="f-avatar">李</div><div class="f-body"><div class="f-meta"><span class="name">李同学</span>2023-03-10 14:32</div><h3>关于高三复习节奏的一些疑问</h3><p>最近感觉各科作业量都上来了，想请教一下学长学姐们，晚自习的时间该怎么分配比较合理？</p><div class="f-actions"><span>👍 12</span><span>💬 5</span></div></div></div>
-      <div class="forum-item"><div class="f-avatar">王</div><div class="f-body"><div class="f-meta"><span class="name">王同学</span>2023-03-09 20:15</div><h3>高新校区社团招新什么时候开始？</h3><p>想参加 FABLAB 创智空间，不知道这学期还招不招人，有了解的同学吗？</p><div class="f-actions"><span>👍 8</span><span>💬 3</span></div></div></div>
-      <div class="forum-item"><div class="f-avatar">陈</div><div class="f-body"><div class="f-meta"><span class="name">陈同学</span>2023-03-08 09:47</div><h3>本部食堂新窗口测评</h3><p>二楼新开的那家面线糊味道不错，价格也实惠，推荐大家去试试。</p><div class="f-actions"><span>👍 21</span><span>💬 7</span></div></div></div>
+      <div class="forum-item"><div class="f-avatar">李</div><div class="f-body"><div class="f-meta"><span class="name">李同学</span>2023-03-10 14:32</div><h3>关于高三复习节奏的一些疑问</h3><p>最近感觉各科作业量都上来了，想请教一下学长学姐们，晚自习的时间该怎么分配比较合理？尤其是生物，感觉背了又忘，忘了又背，有没有什么好的办法？</p><div class="f-actions"><span>👍 12</span><span>💬 5</span></div></div></div>
+    <div class="forum-item"><div class="f-avatar">学</div><div class="f-body"><div class="f-meta"><span class="name">学习部</span>2022-05-13 18:40</div><h3>【活动回顾】校园密码解密挑战赛结果公布</h3><p>上周举办的密码解密挑战赛已结束，共 87 名同学报名。决赛最后一题为 ASCII 编码，仅有 6 人完整解出，其中高一（3）班一位同学在十分钟内完成，获得本次比赛一等奖。答案是一句话，具体内容已随证书一同发放。恭喜以上同学，也感谢各位的参与。</p><div class="f-comments"><div class="f-comment"><span class="c-name">匿名同学</span><span class="c-time">2022-05-13 19:02</span><div>最后那道题是不是有点超纲了，我们班没人做出来。</div></div><div class="f-comment"><span class="c-name">同年级同学</span><span class="c-time">2022-05-13 19:25</span><div>第一名是真的厉害，我看了一眼 ASCII 表就放弃了。</div></div><div class="f-comment"><span class="c-name">学习部</span><span class="c-time">2022-05-13 20:11</span><div>题目确实偏难，主要是想看看有没有同学能摸到思路。明年还会再办。</div></div></div></div></div>
+      <div class="forum-item"><div class="f-avatar">王</div><div class="f-body"><div class="f-meta"><span class="name">王同学</span>2023-03-09 20:15</div><h3>高新校区社团招新什么时候开始？</h3><p>想参加 FABLAB 创智空间，不知道这学期还招不招人，有了解的同学吗？听说生物组那边有个内部实验室，好像不对外开放？</p><div class="f-actions"><span>👍 8</span><span>💬 3</span></div></div></div>
+      <div class="forum-item"><div class="f-avatar">陈</div><div class="f-body"><div class="f-meta"><span class="name">陈同学</span>2023-03-08 09:47</div><h3>本部食堂新窗口测评</h3><p>二楼新开的那家面线糊味道不错，价格也实惠，推荐大家去试试。不过高峰期人太多了，建议错峰。</p><div class="f-actions"><span>👍 21</span><span>💬 7</span></div></div></div>
       <div class="forum-item"><div class="f-avatar">刘</div><div class="f-body"><div class="f-meta"><span class="name">刘同学</span>2023-04-12 18:20</div><h3>图书馆三楼的自习位太难抢了</h3><p>每天下午去都满了，有没有人知道哪里还有安静的自习地方？天台太晒，实验楼那边据说晚上不开。</p><div class="f-actions"><span>👍 9</span><span>💬 3</span></div></div></div>
-      <div class="forum-item"><div class="f-avatar">赵</div><div class="f-body"><div class="f-meta"><span class="name">赵同学</span>2023-12-08 22:14</div><h3>有人知道唐思远学长去哪了吗？</h3><p>以前生物组的唐思远学长，去年毕业之后好像完全没消息了。有人说他去了外地读书，也有人说他身体不好休学了。有没有人了解？</p><div class="f-actions"><span>👍 6</span><span>💬 4</span></div></div></div>
-      <div class="forum-item"><div class="f-avatar">孙</div><div class="f-body"><div class="f-meta"><span class="name">孙同学</span>2024-02-28 16:45</div><h3>罗克明老师的历史课有人上过吗？</h3><p>下学期想选历史，听说罗克明老师讲得不错，但好像跟生物组的罗克生老师名字很像，差点搞混。有上过的同学说说感受？</p><div class="f-actions"><span>👍 4</span><span>💬 2</span></div></div></div>
+      <div class="forum-item"><div class="f-avatar">赵</div><div class="f-body"><div class="f-meta"><span class="name">赵同学</span>2023-12-08 22:14</div><h3>有人知道<b>唐思远</b>学长去哪了吗？</h3><p>以前生物组的<b>唐思远</b>学长，去年毕业之后好像完全没消息了。有人说他去了外地读书，也有人说他身体不好休学了。有没有人了解？他之前还拿过省级奖的，突然就一点动静都没了。</p><div class="f-actions"><span>👍 6</span><span>💬 4</span></div></div></div>
+      <div class="forum-item"><div class="f-avatar">孙</div><div class="f-body"><div class="f-meta"><span class="name">孙同学</span>2024-02-28 16:45</div><h3><b>罗克明</b>老师的历史课有人上过吗？</h3><p>下学期想选历史，听说<b>罗克明</b>老师讲得不错，但好像跟生物组的<b>罗克生</b>老师名字很像，差点搞混。有上过的同学说说感受？另外，这两位老师是亲戚吗？</p><div class="f-actions"><span>👍 4</span><span>💬 2</span></div></div></div>
     </div>
     <div class="no-result" id="postNoResult">没有找到相关帖子</div>
   </div>
   <footer>
-    <div class="footer-links">友情链接：湘西州教育信息网 | 湖南省教育厅 | 湘西十三中校友会</div>
-    <p>湖南省宜州市湘西第十三中学 | 学生论坛</p>
-    <p>Copyright © 1902-2024 湖南省宜州市湘西第十三中学 版权所有</p>
+    <div class="footer-links">友情链接：白州市教育信息网 | 福建省教育厅 | 瑾才中学校友会</div>
+    <p>福建省白州市瑾才中学 | 学生论坛</p>
+    <p>Copyright © 1902-2024 福建省白州市瑾才中学 版权所有</p>
     <p style="margin-top:8px;font-size:12px;">本页面为学习模仿用途，非官方站点</p>
   </footer>
 </section>
@@ -360,7 +501,7 @@ footer{background:#2e2a24;color:#a89c88;text-align:center;padding:26px 20px;font
 <!-- 林凯公告 -->
 <section class="page" id="page-linkai">
   <nav class="s-nav">
-    <div class="logo" onclick="goHome()">湘西十三中</div>
+    <div class="logo" onclick="goHome()">瑾才中学</div>
     <ul class="nav-links">
       <li><a onclick="goHome()">首页</a></li>
       <li><a onclick="goHome('sec-news')">校园资讯</a></li>
@@ -374,15 +515,19 @@ footer{background:#2e2a24;color:#a89c88;text-align:center;padding:26px 20px;font
       <span class="notice-tag tag-award">喜报</span>
       <h2>祝贺林凯同学在生物工程大赛中荣获第一名</h2>
       <div class="notice-meta">发布日期：2024-05-18 | 来源：教务处</div>
-      <p>在刚刚结束的市级中学生生物工程大赛中，我校高三学生林凯凭借扎实的学科功底与出色的现场表现，从众多参赛选手中脱颖而出，荣获第一名的优异成绩。本次比赛中，我校生物竞赛组另有苏念、何雨桐、张子恒等同学获得二、三等奖，整体成绩位居全市前列。</p>
-      <p>林凯同学在备赛期间刻苦钻研、反复实验，展现了湘西十三中学子严谨求实、勇于创新的精神风貌。学校特向林凯同学表示热烈祝贺，并向指导教师的辛勤付出表示感谢。</p>
+      <p>在刚刚结束的市级中学生生物工程大赛中，我校高三学生林凯凭借扎实的学科功底与出色的现场表现，从众多参赛选手中脱颖而出，荣获第一名的优异成绩。本次比赛中，我校生物竞赛组另有<b>苏念、何雨桐、张子恒</b>等同学获得二、三等奖，整体成绩位居全市前列。</p>
+      <img src="image3.png" class="notice-photo" alt="林凯同学获奖现场">
+      <p>林凯同学在备赛期间刻苦钻研、反复实验，展现了瑾才中学子严谨求实、勇于创新的精神风貌。学校特向林凯同学表示热烈祝贺，并向指导教师的辛勤付出表示感谢。</p>
       <div class="teacher-info">
-        <h4 style="font-size:20px;">指导老师：<strong style="font-size:24px;color:#7a2e2e;">罗克生</strong></h4>
-        <p>罗克生老师系我校生物教研组骨干教师，长期承担高中生物学科教学与竞赛指导工作，具有丰富的实验教学与课题研究经验。</p>
-        <p>在本次生物工程大赛备赛过程中，罗克生老师全程跟进，从选题论证、实验设计到数据处理与答辩演练，给予了林凯同学系统而细致的指导，为最终取得第一名提供了重要保障。</p>
+        <img src="image3.png" class="t-photo" alt="罗克生老师">
+        <div class="t-text">
+          <h4 style="font-size:20px;">指导老师：<strong style="font-size:24px;color:#7a2e2e;">罗克生</strong></h4>
+          <p>罗克生老师系我校生物教研组骨干教师，长期承担高中生物学科教学与竞赛指导工作，具有丰富的实验教学与课题研究经验。</p>
+          <p>在本次生物工程大赛备赛过程中，罗克生老师全程跟进，从选题论证、实验设计到数据处理与答辩演练，给予了林凯同学系统而细致的指导，为最终取得第一名提供了重要保障。</p>
+        </div>
       </div>
       <p>希望全体同学以林凯同学为榜样，在各自感兴趣的领域深耕细作，为校争光。</p>
-      <div class="sign">湖南省宜州市湘西第十三中学 教务处<br>2024年5月18日</div>
+      <div class="sign">福建省白州市瑾才中学 教务处<br>2024年5月18日</div>
     </div>
     <div class="notice-card punish">
       <span class="notice-tag tag-punish">处分通知</span>
@@ -391,17 +536,17 @@ footer{background:#2e2a24;color:#a89c88;text-align:center;padding:26px 20px;font
       <p>经学校调查核实，林凯同学在校期间多次发生恶意伤害同学的行为，情节较重，违反《中学生日常行为规范》及我校学生管理条例相关规定，对班级秩序与同学身心健康造成不良影响。</p>
       <p>为严肃校纪校规，教育本人、警示他人，经学校德育处研究并报校务会批准，决定给予林凯同学相应纪律处分，并责令其作出深刻检讨，同时安排专门的心理与行为辅导。</p>
       <p>学校始终坚持立德树人，对任何违反校纪、侵害同学权益的行为零容忍。希望全体同学引以为戒，团结友善，共同维护安全、和谐的校园环境。</p>
-      <div class="sign">湖南省宜州市湘西第十三中学 德育处<br>主任：郑明德<br>2024年6月5日</div>
+      <div class="sign">福建省白州市瑾才中学 德育处<br>主任：<b>郑明德</b><br>2024年6月5日</div>
     </div>
     <a class="back-link" onclick="goHome()">← 返回首页</a>
   </div>
-  <footer><p>湖南省宜州市湘西第十三中学 | 校园资讯</p><p style="margin-top:8px;font-size:12px;">本页面为学习模仿用途，非官方站点</p></footer>
+  <footer><p>福建省白州市瑾才中学 | 校园资讯</p><p style="margin-top:8px;font-size:12px;">本页面为学习模仿用途，非官方站点</p></footer>
 </section>
 
 <!-- 林凯讨论 -->
 <section class="page" id="page-linkai-forum">
   <nav class="s-nav">
-    <div class="logo" onclick="goHome()">湘西十三中</div>
+    <div class="logo" onclick="goHome()">瑾才中学</div>
     <div class="nav-right">
       <ul class="nav-links">
         <li><a onclick="goHome()">首页</a></li>
@@ -413,19 +558,20 @@ footer{background:#2e2a24;color:#a89c88;text-align:center;padding:26px 20px;font
   </nav>
   <section class="page-banner"><h1>搜索结果</h1><p>关键词：林凯</p></section>
   <div class="forum-wrap">
-    <div class="search-tip">共找到 <strong>2</strong> 条与「<strong>林凯</strong>」相关的帖子</div>
+    <div class="search-tip">共找到 <strong>3</strong> 条与「<strong>林凯</strong>」相关的帖子 / 公告</div>
     <div class="forum-list">
-      <div class="forum-item"><div class="f-avatar">张</div><div class="f-body"><div class="f-meta"><span class="name">张同学</span>2024-06-03 21:18</div><h3>有没有人觉得林凯最近很不对劲？</h3><p>我是林凯的同班同学。说实话，他以前挺内向的，安安静静一个人，基本不跟人起冲突。但最近这一个月，他整个人像变了一样，动不动就发火，前几周甚至因为一点小事直接动手打了班里的同学。我们几个人都吓到了，也不敢多问。想知道有没有人了解他到底怎么了？</p><div class="f-comments"><div class="f-comment"><span class="c-name">匿名同学</span><span class="c-time">2024-06-03 21:40</span><div>会不会是生病了？我听说有些心理或情绪方面的疾病，会让人性格突然变化，建议他跟家长和老师说说。</div></div><div class="f-comment"><span class="c-name">同班同学</span><span class="c-time">2024-06-03 22:05</span><div>也有可能不是病，是最近压力太大了。不过打人肯定不对，还是得让老师介入。</div></div><div class="f-comment"><span class="c-name">匿名同学</span><span class="c-time">2024-06-03 22:31</span><div>你们有没有问过罗克生老师？他是林凯的生物老师，平时跟林凯走得比较近，说不定知道点什么。</div></div><div class="f-comment"><span class="c-name">同班同学</span><span class="c-time">2024-06-03 22:47</span><div>对，罗老师应该了解一些情况。不过这种事还是别乱猜，等学校那边有说法吧。</div></div><div class="f-comment"><span class="c-name">匿名同学</span><span class="c-time">2024-06-03 23:10</span><div>说起来，上学期王宇轩突然转学走了，也是生物组的，之前一点征兆都没有。最近学校好像老有这种事，有点奇怪。</div></div><div class="f-comment"><span class="c-name">同班同学</span><span class="c-time">2024-06-03 23:22</span><div>王宇轩是因为家里搬去外地了吧，跟林凯应该没什么关系。</div></div></div></div></div>
+      <div class="forum-item"><div class="f-avatar">张</div><div class="f-body"><div class="f-meta"><span class="name">张同学</span>2024-06-03 21:18</div><h3>有没有人觉得林凯最近很不对劲？</h3><p>我是林凯的同班同学。说实话，他以前挺内向的，安安静静一个人，基本不跟人起冲突。但最近这一个月，他整个人像变了一样，动不动就发火，前几周甚至因为一点小事直接动手打了班里的同学。我们几个人都吓到了，也不敢多问。想知道有没有人了解他到底怎么了？</p><div class="f-comments"><div class="f-comment"><span class="c-name">匿名同学</span><span class="c-time">2024-06-03 21:40</span><div>会不会是生病了？我听说有些心理或情绪方面的疾病，会让人性格突然变化，建议他跟家长和老师说说。</div></div><div class="f-comment"><span class="c-name">同班同学</span><span class="c-time">2024-06-03 22:05</span><div>也有可能不是病，是最近压力太大了。不过打人肯定不对，还是得让老师介入。</div></div><div class="f-comment"><span class="c-name">匿名同学</span><span class="c-time">2024-06-03 22:31</span><div>你们有没有问过<b>罗克生</b>老师？他是林凯的生物老师，平时跟林凯走得比较近，说不定知道点什么。</div></div><div class="f-comment"><span class="c-name">同班同学</span><span class="c-time">2024-06-03 22:47</span><div>对，罗老师应该了解一些情况。不过这种事还是别乱猜，等学校那边有说法吧。</div></div><div class="f-comment"><span class="c-name">匿名同学</span><span class="c-time">2024-06-03 23:10</span><div>说起来，上学期<b>王宇轩</b>突然转学走了，也是生物组的，之前一点征兆都没有。最近学校好像老有这种事，有点奇怪。</div></div><div class="f-comment"><span class="c-name">同班同学</span><span class="c-time">2024-06-03 23:22</span><div><b>王宇轩</b>是因为家里搬去外地了吧，跟林凯应该没什么关系。</div></div></div></div></div>
       <div class="forum-item"><div class="f-avatar">林</div><div class="f-body"><div class="f-meta"><span class="name">林文昌</span>2024-06-04 12:26</div><h3>我是林凯的弟弟，想问问大家我哥最近怎么了</h3><p>我是林凯的弟弟林文昌，比哥哥低了两个年段，平时在学校里跟他碰面的机会不多，很多事情都不太了解。最近听家里人说他在学校出了点事，我哥回家也不肯讲。我怀疑他是不是在学校被人欺负了，又不敢跟家里说。有没有认识我哥的同学，能告诉我一点情况？</p><div class="f-comments"><div class="f-comment"><span class="c-name">同班同学</span><span class="c-time">2024-06-04 12:50</span><div>学弟你好，我们跟林凯同班。据我们了解，他在班里应该没有被人霸凌，平时也没见过有人欺负他。</div></div><div class="f-comment"><span class="c-name">匿名同学</span><span class="c-time">2024-06-04 13:12</span><div>对，反而最近是他情绪不太好，还动手打过同学。所以应该不是他被欺负的问题。</div></div><div class="f-comment"><span class="c-name">隔壁班同学</span><span class="c-time">2024-06-04 13:35</span><div>我也认识林凯，他之前挺老实的，不像会惹事的人。但最近确实变了很多，建议你们家里人多关心关心他。</div></div><div class="f-comment"><span class="c-name">同班同学</span><span class="c-time">2024-06-04 14:02</span><div>你跨了两个年段，平时确实不好了解他的情况。要不让你爸妈直接找班主任聊聊？这样更靠谱。</div></div></div></div></div>
+      <div class="forum-item"><div class="f-avatar">校</div><div class="f-body"><div class="f-meta"><span class="name">教务处</span>2024-05-18 10:00</div><h3>【喜报】祝贺林凯同学在生物工程大赛中荣获第一名</h3><p>在刚刚结束的市级中学生生物工程大赛中，我校高三学生林凯荣获第一名的优异成绩。指导老师：罗克生。详见校园资讯页面。</p><div class="f-actions"><span>👍 36</span><span>💬 2</span></div></div></div>
     </div>
   </div>
-  <footer><p>湖南省宜州市湘西第十三中学 | 学生论坛</p><p style="margin-top:8px;font-size:12px;">本页面为学习模仿用途，非官方站点</p></footer>
+  <footer><p>福建省白州市瑾才中学 | 学生论坛</p><p style="margin-top:8px;font-size:12px;">本页面为学习模仿用途，非官方站点</p></footer>
 </section>
 
 <!-- 罗克生讨论 -->
 <section class="page" id="page-luokesheng-forum">
   <nav class="s-nav">
-    <div class="logo" onclick="goHome()">湘西十三中</div>
+    <div class="logo" onclick="goHome()">瑾才中学</div>
     <div class="nav-right">
       <ul class="nav-links">
         <li><a onclick="goHome()">首页</a></li>
@@ -439,16 +585,16 @@ footer{background:#2e2a24;color:#a89c88;text-align:center;padding:26px 20px;font
   <div class="forum-wrap">
     <div class="search-tip">共找到 <strong>1</strong> 条与「<strong>罗克生</strong>」相关的帖子</div>
     <div class="forum-list">
-      <div class="forum-item"><div class="f-avatar">周</div><div class="f-body"><div class="f-meta"><span class="name">周同学</span>2023-03-18 19:42</div><h3>罗克生老师为什么老给大家发牛奶？</h3><p>说个一直想不通的事。罗克生老师真的特别爱给学生发牛奶，几乎每次课后、每次答疑都会顺手递一盒过来。有时候大家不想喝，他还一直劝，说“喝了才有精神”。上次有个学姐明确说不想喝，罗老师还是坚持让她喝，弄得学姐很尴尬。想问问大家，这到底是什么习惯？</p><div class="f-comments"><div class="f-comment"><span class="c-name">同班同学</span><span class="c-time">2023-03-18 19:58</span><div>我也遇到过。罗老师人很好，就是这一点有点让人招架不住，感觉他是真心觉得牛奶对身体好。</div></div><div class="f-comment"><span class="c-name">匿名同学</span><span class="c-time">2023-03-18 20:15</span><div>被强迫喝的那个学姐我也听说了，其实大家不是不领情，就是希望老师别太坚持，尊重一下个人意愿。</div></div><div class="f-comment"><span class="c-name">隔壁班同学</span><span class="c-time">2023-03-18 20:37</span><div>罗老师可能是把学生当自己孩子看了，出发点应该是好的，只是方式上有点过头。</div></div><div class="f-comment"><span class="c-name">林凯</span><span class="c-time">2023-03-18 21:04</span><div>其实罗老师对我是真的上心。我生日是9月11日，那天他还特意送了我一盒牛奶，说祝我生日快乐。虽然平时他也老发牛奶，但那次我挺感动的。</div></div><div class="f-comment"><span class="c-name">同班同学</span><span class="c-time">2023-03-18 21:20</span><div>林凯这么一说，感觉罗老师确实是用自己的方式在关心学生。不过还是希望他能注意分寸，别让人觉得有压力。</div></div><div class="f-comment"><span class="c-name">匿名同学</span><span class="c-time">2024-03-15 18:26</span><div>说起来，最近罗老师好像状态不太对，这个月已经请了好几次假了，以前他几乎不请假的。上周在走廊碰到他，脸色特别差，整个人看着很疲惫，也不知道是不是身体出了什么问题。</div></div><div class="f-comment"><span class="c-name">苏念</span><span class="c-time">2023-03-18 21:35</span><div>我是生物组的，罗老师对竞赛组的学生确实很上心。不过我们组里何雨桐、张子恒他们好像都挺习惯的，没人觉得有什么问题。</div></div><div class="f-comment"><span class="c-name">匿名同学</span><span class="c-time">2023-03-18 22:10</span><div>说起来，以前还有个陈墨学长，也是生物组的，好像跟罗老师关系特别好。不过毕业之后就没消息了。</div></div></div></div></div>
+      <div class="forum-item"><div class="f-avatar">周</div><div class="f-body"><div class="f-meta"><span class="name">周同学</span>2023-03-18 19:42</div><h3>罗克生老师为什么老给大家发牛奶？</h3><p>说个一直想不通的事。罗克生老师真的特别爱给学生发牛奶，几乎每次课后、每次答疑都会顺手递一盒过来。有时候大家不想喝，他还一直劝，说“喝了才有精神”。上次有个学姐明确说不想喝，罗老师还是坚持让她喝，弄得学姐很尴尬。想问问大家，这到底是什么习惯？</p><div class="f-comments"><div class="f-comment"><span class="c-name">同班同学</span><span class="c-time">2023-03-18 19:58</span><div>我也遇到过。罗老师人很好，就是这一点有点让人招架不住，感觉他是真心觉得牛奶对身体好。</div></div><div class="f-comment"><span class="c-name">匿名同学</span><span class="c-time">2023-03-18 20:15</span><div>被强迫喝的那个学姐我也听说了，其实大家不是不领情，就是希望老师别太坚持，尊重一下个人意愿。</div></div><div class="f-comment"><span class="c-name">隔壁班同学</span><span class="c-time">2023-03-18 20:37</span><div>罗老师可能是把学生当自己孩子看了，出发点应该是好的，只是方式上有点过头。</div></div><div class="f-comment"><span class="c-name">林凯</span><span class="c-time">2023-09-11 21:04</span><div>我感觉老师应该是在关心我们吧，今天是我生日，他就又送我一瓶牛奶，说要注意身体，这几天别着凉了。</div></div><div class="f-comment"><span class="c-name">同班同学</span><span class="c-time">2023-09-18 21:20</span><div>感觉罗老师确实是用自己的方式在关心学生。不过还是希望他能注意分寸，别让人觉得有压力。</div></div><div class="f-comment"><span class="c-name">匿名同学</span><span class="c-time">2024-03-15 18:26</span><div>说起来，最近罗老师好像状态不太对，这个月已经请了好几次假了，以前他几乎不请假的。上周在走廊碰到他，脸色特别差，整个人看着很疲惫，也不知道是不是身体出了什么问题。</div></div><div class="f-comment"><span class="c-name"><b>苏念</b></span><span class="c-time">2023-09-18 21:35</span><div>我是生物组的，罗老师对竞赛组的学生确实很上心。不过我们组里<b>何雨桐、张子恒</b>他们好像都挺习惯的，没人觉得有什么问题。</div></div><div class="f-comment"><span class="c-name">匿名同学</span><span class="c-time">2023-09-18 22:10</span><div>说起来，以前还有个<b>陈墨</b>学长，也是生物组的，好像跟罗老师关系特别好。不过毕业之后就没消息了。</div></div></div></div></div>
     </div>
   </div>
-  <footer><p>湖南省宜州市湘西第十三中学 | 学生论坛</p><p style="margin-top:8px;font-size:12px;">本页面为学习模仿用途，非官方站点</p></footer>
+  <footer><p>福建省白州市瑾才中学 | 学生论坛</p><p style="margin-top:8px;font-size:12px;">本页面为学习模仿用途，非官方站点</p></footer>
 </section>
 
 <!-- 李恩讨论 -->
 <section class="page" id="page-lien-forum">
   <nav class="s-nav">
-    <div class="logo" onclick="goHome()">湘西十三中</div>
+    <div class="logo" onclick="goHome()">瑾才中学</div>
     <div class="nav-right">
       <ul class="nav-links">
         <li><a onclick="goHome()">首页</a></li>
@@ -460,19 +606,20 @@ footer{background:#2e2a24;color:#a89c88;text-align:center;padding:26px 20px;font
   </nav>
   <section class="page-banner"><h1>搜索结果</h1><p>关键词：李恩</p></section>
   <div class="forum-wrap">
-    <div class="search-tip">共找到 <strong>2</strong> 条与「<strong>李恩</strong>」相关的帖子</div>
+    <div class="search-tip">共找到 <strong>3</strong> 条与「<strong>李恩</strong>」相关的帖子 / 公告</div>
     <div class="forum-list">
       <div class="forum-item"><div class="f-avatar">吴</div><div class="f-body"><div class="f-meta"><span class="name">吴同学</span>2023-03-16 20:05</div><h3>李恩学姐真的好厉害，生物工程大赛第一名</h3><p>刚看到学校发的喜报，李恩学姐拿了市级生物工程大赛第一名。之前就听说她实验做得特别好，这次算是实至名归了。作为学妹真的很敬佩她，希望以后也能像她一样。</p><div class="f-comments"><div class="f-comment"><span class="c-name">同年级同学</span><span class="c-time">2023-03-16 20:22</span><div>李恩确实很强，平时在实验室里特别专注，很多细节都是她自己一点点抠出来的。</div></div><div class="f-comment"><span class="c-name">匿名同学</span><span class="c-time">2023-03-16 20:41</span><div>而且她人也很低调，拿了奖也没见她到处说，这点挺让人佩服的。</div></div><div class="f-comment"><span class="c-name">隔壁班同学</span><span class="c-time">2023-03-16 21:03</span><div>罗克生老师带出来的学生果然不一样，听说备赛那段时间她几乎天天泡在实验室。</div></div></div></div></div>
-      <div class="forum-item"><div class="f-avatar">匿</div><div class="f-body"><div class="f-meta"><span class="name">匿名同学</span>2023-11-03 22:14</div><h3>有人知道李恩的事吗？传得沸沸扬扬</h3><p>最近学校里传得很厉害，说李恩出事了。一开始还以为是谣言，后来越传越具体，说她杀了人，然后自己自杀未遂，现在人在医院。真的假的？有没有了解情况的同学说一下，实在有点难以相信，毕竟她以前那么优秀。</p><div class="f-comments"><div class="f-comment"><span class="c-name">匿名同学</span><span class="c-time">2023-11-03 22:30</span><div>我也听说了，但版本很多，有说跟家里人起冲突的，也有说跟同学有关的，不确定哪个是真的。</div></div><div class="f-comment"><span class="c-name">同年级同学</span><span class="c-time">2023-11-03 22:52</span><div>太突然了。她今年 3 月拿奖的时候还是大家眼里的榜样，谁能想到才过了半年多就变成这样。</div></div><div class="f-comment"><span class="c-name">隔壁班同学</span><span class="c-time">2023-11-03 23:10</span><div>听说她现在虽然抢救过来了，但伤得很重，具体情况还是等官方消息吧，别乱传。</div></div><div class="f-comment"><span class="c-name">匿名同学</span><span class="c-time">2023-11-03 23:48</span><div>不管怎样，一条人命没了，另一条也差点没了。希望大家嘴上留点余地，也别去打扰她家人。</div></div><div class="f-comment"><span class="c-name">苏念</span><span class="c-time">2023-11-04 08:20</span><div>我跟李恩学姐在同一个竞赛组。她出事前一个月，我见过她一次，整个人瘦了很多，眼睛下面很重。我问她怎么了，她说没事，就是最近实验太忙。</div></div></div></div></div>
+      <div class="forum-item"><div class="f-avatar">校</div><div class="f-body"><div class="f-meta"><span class="name">教务处</span>2023-03-15 10:00</div><h3>【喜报】祝贺李恩同学在生物工程大赛中荣获第一名</h3><p>在市级中学生生物工程大赛中，我校李恩同学荣获第一名的优异成绩。指导老师：罗克生。详见校园资讯页面。</p><div class="f-actions"><span>👍 42</span><span>💬 3</span></div></div></div>
+      <div class="forum-item"><div class="f-avatar">匿</div><div class="f-body"><div class="f-meta"><span class="name">匿名同学</span>2023-11-03 22:14</div><h3>有人知道李恩的事吗？传得沸沸扬扬</h3><p>最近学校里传得很厉害，说李恩出事了。一开始还以为是谣言，后来越传越具体，说她杀了人，然后自己自杀未遂，现在人在医院。真的假的？有没有了解情况的同学说一下，实在有点难以相信，毕竟她以前那么优秀。</p><div class="f-comments"><div class="f-comment"><span class="c-name">匿名同学</span><span class="c-time">2023-11-03 22:30</span><div>我也听说了，但版本很多，有说跟家里人起冲突的，也有说跟同学有关的，不确定哪个是真的。</div></div><div class="f-comment"><span class="c-name">同年级同学</span><span class="c-time">2023-11-03 22:52</span><div>太突然了。她今年 3 月拿奖的时候还是大家眼里的榜样，谁能想到才过了半年多就变成这样。</div></div><div class="f-comment"><span class="c-name">隔壁班同学</span><span class="c-time">2023-11-03 23:10</span><div>听说她现在虽然抢救过来了，但伤得很重，具体情况还是等官方消息吧，别乱传。</div></div><div class="f-comment"><span class="c-name">匿名同学</span><span class="c-time">2023-11-03 23:48</span><div>不管怎样，一条人命没了，另一条也差点没了。希望大家嘴上留点余地，也别去打扰她家人。</div></div><div class="f-comment"><span class="c-name"><b>苏念</b></span><span class="c-time">2023-11-04 08:20</span><div>我跟李恩学姐在同一个竞赛组。她出事前一个月，我见过她一次，整个人瘦了很多，眼睛下面很重。我问她怎么了，她说没事，就是最近实验太忙。</div></div></div></div></div>
     </div>
   </div>
-  <footer><p>湖南省宜州市湘西第十三中学 | 学生论坛</p><p style="margin-top:8px;font-size:12px;">本页面为学习模仿用途，非官方站点</p></footer>
+  <footer><p>福建省白州市瑾才中学 | 学生论坛</p><p style="margin-top:8px;font-size:12px;">本页面为学习模仿用途，非官方站点</p></footer>
 </section>
 
 <!-- 罗克生表彰 -->
 <section class="page" id="page-luokesheng">
   <nav class="s-nav">
-    <div class="logo" onclick="goHome()">湘西十三中</div>
+    <div class="logo" onclick="goHome()">瑾才中学</div>
     <ul class="nav-links">
       <li><a onclick="goHome()">首页</a></li>
       <li><a onclick="goHome('sec-news')">校园资讯</a></li>
@@ -487,22 +634,49 @@ footer{background:#2e2a24;color:#a89c88;text-align:center;padding:26px 20px;font
       <h2>关于表彰罗克生老师教学与科研突出成绩的决定</h2>
       <div class="notice-meta">发布日期：2023-03-20 | 来源：教务处、教研处</div>
       <p>罗克生老师系我校生物教研组骨干教师，长期承担高中生物学科教学与竞赛指导工作。多年来，罗老师以严谨的治学态度和扎实的专业功底，在课堂教学、竞赛辅导与课题研究等方面均取得了突出成绩，深受学生喜爱与同行认可。</p>
-      <div class="teacher-info"><h4>罗克生</h4><p>生物教研组骨干教师，长期从事高中生物教学与生物工程竞赛指导工作。</p></div>
+      <div class="teacher-info">
+        <img src="image3.png" class="t-photo" alt="罗克生老师">
+        <div class="t-text">
+          <h4>罗克生</h4>
+          <p>生物教研组骨干教师，长期从事高中生物教学与生物工程竞赛指导工作。</p>
+        </div>
+      </div>
       <p>在教学方面，罗克生老师注重启发式教学与实验探究相结合，所带班级生物学科成绩长期名列前茅，多次被评为校级、市级优秀教师。</p>
-      <p>在生物工程领域，罗老师主持并参与多项市级、省级课题研究，指导学生在各级生物工程大赛中屡获佳绩。2023年，其指导的学生李恩在市级中学生生物工程大赛中荣获第一名。更早之前，其指导的唐思远、陈墨等同学也曾在省级比赛中取得优异成绩。</p>
+      <p>在生物工程领域，罗老师主持并参与多项市级、省级课题研究，指导学生在各级生物工程大赛中屡获佳绩。2023年，其指导的学生李恩在市级中学生生物工程大赛中荣获第一名。更早之前，其指导的<b>唐思远、陈墨</b>等同学也曾在省级比赛中取得优异成绩。</p>
       <p>更值得一提的是，罗克生老师从教多年来，培养的学生已遍布各行各业，其中相当一部分已成长为生物工程、医学、科研等领域的顶尖人才，在各自岗位上发挥着重要作用，充分体现了罗老师深厚的教学功力与长远的育人眼光。</p>
       <p>为表彰罗克生老师在教育教学与生物工程领域的突出贡献，经学校研究决定，特予以通报表彰，并号召全体教师向其学习。</p>
-      <div class="sign">湖南省宜州市湘西第十三中学 教务处<br>2023年3月20日</div>
+      <div class="sign">福建省白州市瑾才中学 教务处<br>2023年3月20日</div>
     </div>
+
+    <div class="notice-card">
+      <span class="notice-tag tag-award">教职工风采</span>
+      <h2>生物教研组 · 部分骨干教师</h2>
+      <div class="notice-meta">来源：教研处 | 更新于 2024-04-20</div>
+      <div class="teacher-info">
+        <img src="image4.png" class="t-photo" alt="苏志明老师">
+        <div class="t-text">
+          <h4>苏志明 · 生物教研组组长</h4>
+          <p>教龄 22 年，长期承担高三生物教学与竞赛统筹工作。近三年组织竞赛辅导 47 人次获奖，其中省级以上 11 人次。工作严谨，为人低调。</p>
+        </div>
+      </div>
+      <div class="teacher-info">
+        <img src="image5.png" class="t-photo" alt="许文静老师">
+        <div class="t-text">
+          <h4>许文静 · 心理辅导中心负责人</h4>
+          <p>国家二级心理咨询师，长期负责学生心理健康教育与朋辈互助机制建设。曾多次参与学校危机干预与个案辅导工作。</p>
+        </div>
+      </div>
+    </div>
+
     <a class="back-link" onclick="goHome()">← 返回首页</a>
   </div>
-  <footer><p>湖南省宜州市湘西第十三中学 | 教师表彰</p><p style="margin-top:8px;font-size:12px;">本页面为学习模仿用途，非官方站点</p></footer>
+  <footer><p>福建省白州市瑾才中学 | 教师表彰</p><p style="margin-top:8px;font-size:12px;">本页面为学习模仿用途，非官方站点</p></footer>
 </section>
 
 <!-- 李恩喜报 -->
 <section class="page" id="page-lien">
   <nav class="s-nav">
-    <div class="logo" onclick="goHome()">湘西十三中</div>
+    <div class="logo" onclick="goHome()">瑾才中学</div>
     <ul class="nav-links">
       <li><a onclick="goHome()">首页</a></li>
       <li><a onclick="goHome('sec-news')">校园资讯</a></li>
@@ -517,24 +691,28 @@ footer{background:#2e2a24;color:#a89c88;text-align:center;padding:26px 20px;font
       <h2>祝贺李恩同学在生物工程大赛中荣获第一名</h2>
       <div class="notice-meta">发布日期：2023-03-15 | 来源：教务处</div>
       <p>在市级中学生生物工程大赛中，我校李恩同学凭借扎实的学科功底与出色的现场表现，从众多参赛选手中脱颖而出，荣获第一名的优异成绩。</p>
-      <p>李恩同学在备赛期间刻苦钻研、反复实验，展现了湘西十三中学子严谨求实、勇于创新的精神风貌。学校特向李恩同学表示热烈祝贺，并向指导教师的辛勤付出表示感谢。</p>
+      <img src="image2.png" class="notice-photo" alt="李恩同学获奖现场">
+      <p>李恩同学在备赛期间刻苦钻研、反复实验，展现了瑾才中学子严谨求实、勇于创新的精神风貌。学校特向李恩同学表示热烈祝贺，并向指导教师的辛勤付出表示感谢。</p>
       <div class="teacher-info">
-        <h4>指导老师：<strong style="font-size:24px;color:#7a2e2e;">罗克生</strong></h4>
-        <p>罗克生老师系我校生物教研组骨干教师，长期承担高中生物学科教学与竞赛指导工作，具有丰富的实验教学与课题研究经验。</p>
-        <p>在本次生物工程大赛备赛过程中，罗克生老师全程跟进，从选题论证、实验设计到数据处理与答辩演练，给予了李恩同学系统而细致的指导，为最终取得第一名提供了重要保障。</p>
+        <img src="image3.png" class="t-photo" alt="罗克生老师">
+        <div class="t-text">
+          <h4>指导老师：<strong style="font-size:24px;color:#7a2e2e;">罗克生</strong></h4>
+          <p>罗克生老师系我校生物教研组骨干教师，长期承担高中生物学科教学与竞赛指导工作，具有丰富的实验教学与课题研究经验。</p>
+          <p>在本次生物工程大赛备赛过程中，罗克生老师全程跟进，从选题论证、实验设计到数据处理与答辩演练，给予了李恩同学系统而细致的指导，为最终取得第一名提供了重要保障。</p>
+        </div>
       </div>
       <p>希望全体同学以李恩同学为榜样，在各自感兴趣的领域深耕细作，为校争光。</p>
-      <div class="sign">湖南省宜州市湘西第十三中学 教务处<br>2023年3月15日</div>
+      <div class="sign">福建省白州市瑾才中学 教务处<br>2023年3月15日</div>
     </div>
     <a class="back-link" onclick="goHome()">← 返回首页</a>
   </div>
-  <footer><p>湖南省宜州市湘西第十三中学 | 校园资讯</p><p style="margin-top:8px;font-size:12px;">本页面为学习模仿用途，非官方站点</p></footer>
+  <footer><p>福建省白州市瑾才中学 | 校园资讯</p><p style="margin-top:8px;font-size:12px;">本页面为学习模仿用途，非官方站点</p></footer>
 </section>
 
 <!-- 寄望实验室论坛 -->
 <section class="page" id="page-biologyhope">
   <nav class="bh-nav">
-    <div class="logo" onclick="showPage('page-biologyhope')">湘西十三中</div>
+    <div class="logo" onclick="showPage('page-biologyhope')">瑾才中学</div>
     <div class="nav-right">
       <div class="lab-user-area" id="labUserArea" style="display:none;">
         <span class="lab-username" id="labUsername"></span>
@@ -558,27 +736,27 @@ footer{background:#2e2a24;color:#a89c88;text-align:center;padding:26px 20px;font
   <div class="lab-wrap">
     <div class="lab-notice">本论坛为寄望实验室内部交流使用，非公开页面。请勿将链接转发至外部。</div>
     <div class="lab-login-bar" id="labLoginBar">
-      <input type="text" id="labUser" placeholder="账号">
+      <input type="text" id="labUser" placeholder="账号（区分大小写）">
       <input type="password" id="labPass" placeholder="密码">
       <button onclick="labLogin()">登录</button>
       <span class="lab-error" id="labError"></span>
     </div>
     <div class="bh-post-list">
-      <div class="bh-post"><div class="bh-avatar">L</div><div class="bh-body"><div class="bh-meta"><span class="name">李恩</span>2023-03-10 21:15</div><h3>关于本次生物工程大赛的选题思路</h3><p>整理了一下这次备赛的选题过程，主要围绕微生物降解方向展开。实验数据已经跑完三轮，初步结果比预期好。有兴趣的同学可以在实验室内部群里一起讨论。</p><p>对了，最近总觉得鼻子不太舒服，偶尔像有什么东西在里面动。可能是换季过敏吧，大家注意通风。</p></div></div>
+      <div class="bh-post"><div class="bh-avatar">L</div><div class="bh-body"><div class="bh-meta"><span class="name">Lien</span>2023-03-10 21:15</div><h3>关于本次生物工程大赛的选题思路</h3><p>整理了一下这次备赛的选题过程，主要围绕微生物降解方向展开。实验数据已经跑完三轮，初步结果比预期好，有兴趣的同学可以在实验室内部群里一起讨论：）</p><p>对了，最近总觉得鼻子不太舒服，偶尔像有什么东西在里面动，可能是换季过敏吧，大家注意通风：）</p></div></div>
       <div class="bh-post"><div class="bh-avatar">R</div><div class="bh-body"><div class="bh-meta"><span class="name">Rockson</span>2023-03-12 09:40</div><h3>寄望实验室本学期值班安排</h3><p>本学期实验室开放时间调整为每周二、四下午放学后。请各位同学按时值班，实验器材使用后务必归位。近期天气转凉，大家注意身体。</p><p>另外，牛奶记得按时领，不要浪费。身体状态跟不上的同学，可以单独来找我聊聊，实验室随时开放。</p></div></div>
-      <div class="bh-post"><div class="bh-avatar">H</div><div class="bh-body"><div class="bh-meta"><span class="name">何雨桐</span>2023-09-20 19:30</div><h3>恒温箱温度怎么调？</h3><p>第一次独立做培养，不太确定温度应该设多少。罗老师不在，有学长学姐知道吗？</p><div class="bh-comments"><div class="bh-comment"><span class="c-name">李恩</span><span class="c-time">2023-09-20 19:52</span><div>37度，湿度60%。别开太频繁。</div></div><div class="bh-comment"><span class="c-name">张子恒</span><span class="c-time">2023-09-20 20:15</span><div>我上次设的也是37度，后来发现培养液有点浑，你注意下。</div></div></div></div></div>
-      <div class="bh-post"><div class="bh-avatar">L</div><div class="bh-body"><div class="bh-meta"><span class="name">李恩</span>2023-11-01 23:07</div><h3>最后一次记录</h3><p>最近状态越来越差了。经常头晕，注意力很难集中，有时候觉得鼻子里有东西在爬，但又查不出原因。不知道是不是只有我这样。</p><p>更奇怪的是，身边几个经常来实验室的同学，好像都变得特别听话，老师说什么就是什么，连以前最犟的那几个都不反驳了。我说不上来哪里不对，就是觉得怪。</p><p>恒温箱那边我已经很久没去看了，也不想再去了。如果这条记录还在，就当我随口说说吧。</p><div class="bh-comments"><div class="bh-comment"><span class="c-name">Rockson</span><span class="c-time">2023-11-02 07:52</span><div>李恩，别胡思乱想。你最近太累了，来实验室一趟，我给你看看。牛奶也要按时喝。</div></div><div class="bh-comment"><span class="c-name">匿名</span><span class="c-time">2023-11-02 09:18</span><div>学姐，我最近也老是头晕，还以为是熬夜。鼻子偶尔也会有奇怪的感觉，说不上来。</div></div><div class="bh-comment"><span class="c-name">匿名</span><span class="c-time">2023-11-02 09:35</span><div>学姐，你还好吗？看到的话回一句吧。我们都在。</div></div><div class="bh-comment"><span class="c-name">匿名</span><span class="c-time">2023-11-02 09:47</span><div>我们都在。</div></div><div class="bh-comment"><span class="c-name">匿名</span><span class="c-time">2023-11-02 10:02</span><div>我们都在。</div></div><div class="bh-comment"><span class="c-name">匿名</span><span class="c-time">2023-11-02 10:21</span><div>我们都在。</div></div><div class="bh-comment"><span class="c-name">匿名</span><span class="c-time">2023-11-02 10:44</span><div>我们都在。</div></div><div class="bh-comment"><span class="c-name">匿名</span><span class="c-time">2023-11-02 11:09</span><div>我们都在。</div></div></div></div></div>
-      <div class="bh-post"><div class="bh-avatar">R</div><div class="bh-body"><div class="bh-meta"><span class="name">Rockson</span>2024-04-15 10:30</div><h3>本学期实验室值班表</h3><p>请各位按以下时间到岗：周一放学后——林凯、何雨桐；周二——张子恒、苏念；周四——李恩（如状态允许）。</p><p>另：唐思远、陈墨毕业之后账号已注销，如有资料需要可以来找我。</p></div></div>
+      <div class="bh-post"><div class="bh-avatar">H</div><div class="bh-body"><div class="bh-meta"><span class="name"><b>何雨桐</b></span>2023-09-20 19:30</div><h3>恒温箱温度怎么调？</h3><p>第一次独立做培养，不太确定温度应该设多少。罗老师不在，有学长学姐知道吗？</p><div class="bh-comments"><div class="bh-comment"><span class="c-name">Lien</span><span class="c-time">2023-09-20 19:52</span><div>37度，湿度60%，别开太频繁：）</div></div><div class="bh-comment"><span class="c-name"><b>张子恒</b></span><span class="c-time">2023-09-20 20:15</span><div>我上次设的也是37度，后来发现培养液有点浑，你注意下。</div></div><div class="bh-comment"><span class="c-name"><b>苏念</b></span><span class="c-time">2023-09-20 21:02</span><div>我第一次做的时候培养皿裂了，记得别放太靠边，会被挤到。</div></div></div></div></div>
+      <div class="bh-post"><div class="bh-avatar">L</div><div class="bh-body"><div class="bh-meta"><span class="name">Lien</span>2023-11-01 23:07</div><h3>最后一次记录</h3><p>最近状态越来越差了。经常头晕，注意力很难集中，有时候觉得鼻子里有东西在爬，但又查不出原因，不知道是不是只有我这样</p><p>更奇怪的是，身边几个经常来实验室的同学，好像都变得特别听话，老师说什么就是什么，连以前最犟的那几个都不反驳了。我说不上来哪里不对，就是觉得怪</p><p>恒温箱那边我已经很久没去看了，也不想再去了。如果这条记录还在，就当我随口说说吧。</p><div class="bh-comments"><div class="bh-comment"><span class="c-name">Rockson</span><span class="c-time">2023-11-02 07:52</span><div>李恩，别胡思乱想。你最近太累了，来实验室一趟，我给你看看。牛奶也要按时喝。</div></div><div class="bh-comment"><span class="c-name">匿名</span><span class="c-time">2023-11-02 09:18</span><div>学姐，我最近也老是头晕，还以为是熬夜。鼻子偶尔也会有奇怪的感觉，说不上来。</div></div><div class="bh-comment"><span class="c-name">匿名</span><span class="c-time">2023-11-02 09:35</span><div>学姐，你还好吗？看到的话回一句吧。我们都在。</div></div><div class="bh-comment"><span class="c-name">匿名</span><span class="c-time">2023-11-02 09:47</span><div>我们都在。</div></div><div class="bh-comment"><span class="c-name">匿名</span><span class="c-time">2023-11-02 10:02</span><div>我们都在。</div></div><div class="bh-comment"><span class="c-name">匿名</span><span class="c-time">2023-11-02 10:21</span><div>我们都在。</div></div><div class="bh-comment"><span class="c-name">匿名</span><span class="c-time">2023-11-02 10:44</span><div>我们都在。</div></div><div class="bh-comment"><span class="c-name">匿名</span><span class="c-time">2023-11-02 11:09</span><div>我们都在。</div></div></div></div></div>
+      <div class="bh-post"><div class="bh-avatar">R</div><div class="bh-body"><div class="bh-meta"><span class="name">Rockson</span>2024-04-15 10:30</div><h3>本学期实验室值班表</h3><p>请各位按以下时间到岗：周一放学后——<b>林凯、何雨桐</b>；周二——<b>张子恒、苏念</b>；周四——李恩（如状态允许）。</p><p>另：<b>唐思远、陈墨</b>毕业之后账号已注销，如有资料需要可以来找我。他们的实验数据我会单独归档。</p></div></div>
       <div class="bh-post"><div class="bh-avatar">R</div><div class="bh-body"><div class="bh-meta"><span class="name">Rockson</span>2024-06-10 16:22</div><h3>说一件事</h3><p>最近记忆越来越差了。经常想不起来昨天做过什么，有时候连自己写过的东西都要看半天才认出来。</p><p>同学们的实验室论坛账号密码我都放在办公室了，有需要的可以来找我要。</p></div></div>
-      <div class="bh-post"><div class="bh-avatar">R</div><div class="bh-body"><div class="bh-meta"><span class="name">Rockson</span>2024-06-15 12:08</div><h3>通知</h3><p>选中的同学，今天下午到磺酸基集合。</p><div class="bh-comments"><div class="bh-comment"><span class="c-name">匿名</span><span class="c-time">2024-06-15 12:20</span><div>磺酸基是哪里？</div></div><div class="bh-comment"><span class="c-name">Rockson</span><span class="c-time">2024-06-15 12:23</span><div>实验室。</div></div></div></div></div>
-      <div class="bh-post"><div class="bh-avatar">R</div><div class="bh-body"><div class="bh-meta"><span class="name">Rockson</span>2024-07-20 11:36</div><h3>通知</h3><p>选中的同学，明天下午到过氧碳酸酯基集合。</p><div class="bh-comments"><div class="bh-comment"><span class="c-name">匿名</span><span class="c-time">2024-07-20 11:48</span><div>过氧碳酸酯基是哪里？</div></div><div class="bh-comment"><span class="c-name">Rockson</span><span class="c-time">2024-07-20 11:51</span><div>办公楼。</div></div></div></div></div>
-      <div class="bh-post"><div class="bh-avatar">L</div><div class="bh-body"><div class="bh-meta"><span class="name">李恩</span>2024-08-11 09:03</div><h3>通知</h3><p>使徒们，下午2点，到羟基集合，迎接新的使徒。</p></div></div>
+      <div class="bh-post"><div class="bh-avatar">R</div><div class="bh-body"><div class="bh-meta"><span class="name">Rockson</span>2024-06-15 12:08</div><h3>通知</h3><p>选中的同学，今天下午到磷酸基集合。</p><div class="bh-comments"><div class="bh-comment"><span class="c-name">匿名</span><span class="c-time">2024-06-15 12:20</span><div>是哪里？</div></div><div class="bh-comment"><span class="c-name">Rockson</span><span class="c-time">2024-06-15 12:23</span><div>实验楼402教室</div></div></div></div></div>
+      <div class="bh-post"><div class="bh-avatar">R</div><div class="bh-body"><div class="bh-meta"><span class="name">Rockson</span>2024-07-20 11:36</div><h3>通知</h3><p>选中的同学，明天下午到过氧碳酸酯基集合。</p><div class="bh-comments"><div class="bh-comment"><span class="c-name">匿名</span><span class="c-time">2024-07-20 11:48</span><div>磺酸基是哪里？</div></div><div class="bh-comment"><span class="c-name">Rockson</span><span class="c-time">2024-07-20 11:51</span><div>实验楼301教室</div></div></div></div></div>
+      <div class="bh-post"><div class="bh-avatar">L</div><div class="bh-body"><div class="bh-meta"><span class="name">Lien</span>2024-08-11 09:03</div><h3>通知</h3><p>使徒们，下午2点，到硼酸基集合，迎接新的使徒：）</p></div></div>
     </div>
   </div>
   <footer>
     <div class="footer-links">寄望实验室 · 内部资料 · 请勿外传</div>
     <p>biologyhope · 寄望实验室内部论坛</p>
-    <p>Copyright © 1902-2024 湖南省宜州市湘西第十三中学 版权所有</p>
+    <p>Copyright © 1902-2024 福建省白州市瑾才中学 版权所有</p>
     <p style="margin-top:8px;font-size:12px;">本页面为学习模仿用途，非官方站点</p>
   </footer>
 </section>
@@ -586,7 +764,7 @@ footer{background:#2e2a24;color:#a89c88;text-align:center;padding:26px 20px;font
 <!-- 研究报告记录页 -->
 <section class="page" id="page-report">
   <nav class="bh-nav">
-    <div class="logo" onclick="showPage('page-biologyhope')">湘西十三中</div>
+    <div class="logo" onclick="showPage('page-biologyhope')">瑾才中学</div>
     <ul class="nav-links">
       <li><a onclick="showPage('page-biologyhope')">返回论坛</a></li>
     </ul>
@@ -604,7 +782,7 @@ footer{background:#2e2a24;color:#a89c88;text-align:center;padding:26px 20px;font
           <p>她提到一种蛊虫，专门寄生在人脑里，叫金蚕蛊。这种蛊分母虫和子虫，<b>分别寄生在不同的人身上</b>。子虫的受体是被控制的一方，母虫的受体则是施蛊的一方。<b>只要母虫的受体还活着，就能通过母虫牵制子虫，进而牵制子虫的受体。</b>她说得很平静，像是在讲一件再寻常不过的事。</p>
           <p>但她也说了，这种蛊的副作用极大。<b>母虫与子虫之间是相互消耗的</b>，两个受体都会被拖进去。施蛊的人自己也不会好过，多数情况下是两败俱伤，所以不到万不得已，没人会用它。</p>
           <p>我注意到一件事：<b>子虫和母虫的样貌几乎一模一样，肉眼根本分辨不出，只有在寄生之后，通过宿主的不同表现才能区分开来</b>。这一点让我很在意——这意味着，在实验里必须借助寄生结果去反推虫体类型，容错率极低。</p>
-          <p>临走的时候，我向她讨要了几只，说是带回去做标本研究。她看了我很久，没有拒绝。最后我拿到手的是<b>子虫 13 只，母虫 2 只</b>。</p>
+          <p>临走的时候，我向她讨要了几只，说是带回去做标本研究。她看了我很久，没有拒绝。最后我拿到手的是<b>子虫 12 只，母虫 2 只</b>。</p>
           <p>后来我把它们带回了学校。</p>
         </div>
       </div>
@@ -632,7 +810,7 @@ footer{background:#2e2a24;color:#a89c88;text-align:center;padding:26px 20px;font
           <p>更让我意外的是子虫受体在母虫控制下的表现。</p>
           <p>没有母虫时，子虫受体的反应速度提升，但情绪逐渐失控，本能压过理性。但在母虫存在的情况下，<b>子虫受体反而表现出一种异常的安静与稳定</b>。攻击性、昼夜紊乱、自残行为都大幅减少，个体看起来几乎与正常小鼠无异。母虫的存在，像是在给子虫受体持续施加一种约束。</p>
           <p>但这种稳定是有代价的。我很快发现，<b>在极端情况下，母虫会牺牲子虫及其受体来保全自己</b>。</p>
-          <p>最让我震惊的一次观察，发生在一个对照组里。当时我因为操作失误，导致母虫受体长时间处于营养匮乏状态。两天后，子虫受体的那只小鼠突然死亡，解剖后发现子虫已经解体，其组织被分解吸收——<b>母虫在极端情况下，可以通过信息素命令子虫自我解体，将自身作为营养物质回输给母虫及其受体</b>。</p>
+          <p>最让我震惊的一次观察，发生在一个对照组里。当时我因为操作失误，导致母虫受体长时间处于营养匮乏状态。两天后，子虫受体的那只小鼠突然死亡，解剖后发现子虫已经解体，其组织被分解吸收——<b>母虫在极端情况下，可以通过信息素命令子虫自我解体，将自身作为营养物质回输给母虫及其受体</b>。<b>同时，我意外发现，母虫的受体，抑或母虫在控制时遭受重创，信息链接会强行中断，而子虫似乎能感知母虫的死亡一样，进入休眠模式</b>。</p>
           <p>换句话说，子虫从被寄生的那一刻起，就不只是实验工具，它同时也是一个备用营养源。<b>母虫随时可以牺牲它。</b></p>
           <p>我把这一现象反复验证了三次，结果一致。这不是偶然，而是一种刻在系统里的机制。</p>
           <p>说实话，我很兴奋。这种层面的生物控制机制，如果能完整解析，其价值难以估量。但同时，我第一次感到一种寒意。</p>
@@ -647,11 +825,11 @@ footer{background:#2e2a24;color:#a89c88;text-align:center;padding:26px 20px;font
         <div class="report-head"><span class="report-code">日志四</span><span class="report-date">2022 · 实验室</span></div>
         <div class="report-body">
           <p>那天是课后。我原本以为实验室里没人，门没锁，我在最里间整理培养箱的数据。等我出来的时候，她站在操作台前，正低头看我摊开的记录本。</p>
-          <p>是那个女生。之前来问过几次课题，我对她印象不深，只知道是高二的学生，生物方向。个子不高，话不多，问问题的时候眼神很直。</p>
+          <p>是一个女生，好像叫……李恩吧。之前来问过几次课题，我对她印象不深，只知道是高二的学生，生物方向。个子不高，话不多，问问题的时候眼神很直。</p>
           <p>我第一反应是把本子合上。这些东西不该被任何人看到，尤其是学生。我承认我当时有点慌，语气也不太好，问她怎么进来的。她说门开着，她以为可以进。然后她指着我记录里的那一页，说了一句让我愣住的话——</p>
           <p>"你这个思路，在小白鼠身上能走通，但换到人身上不一定。"</p>
-          <p>她没有害怕。没有问这是什么，没有说要去报告。她只是很平静地，指出了我的一个漏洞。</p复杂>
-          <p>她说，人的前额叶和其他哺乳动物不是一回事。小鼠的前额叶皮层结构简单，寄生后的行为改变更多是应激性的；但人的前额叶牵涉到语言、社会认知、自我意识，子虫寄生之后的影响不会只是"变得听话"这么简单，可能会更，也可能更危险。</p>
+          <p>她没有害怕。没有问这是什么，没有说要去报告。她只是很平静地，指出了我的一个漏洞。</p>
+          <p>她说，人的前额叶和其他哺乳动物不是一回事。小鼠的前额叶皮层结构简单，寄生后的行为改变更多是应激性的；但人的前额叶牵涉到语言、社会认知、自我意识，子虫寄生之后的影响不会只是"变得听话"这么简单，可能会更复杂，也可能更危险。</p>
           <p>她说得很对。这一段我自己也想过，只是没有深究。</p>
           <p>我本来想把她打发走，但她的语气让我犹豫了。她不像是在逞能，也不像是在试探。她就是很认真地，在跟我讨论一个学术问题。那种认真让我想起了年轻时候的自己。</p>
           <p>一个高二的学生，能一眼看出我实验里最要命的漏洞。这件事本身就不太正常。</p>
@@ -691,7 +869,7 @@ footer{background:#2e2a24;color:#a89c88;text-align:center;padding:26px 20px;font
           <p>此日志已加密，请输入密码。</p>
           <input type="password" id="pass6" placeholder="密码">
           <button onclick="unlockLog6()">解锁</button>
-          <div class="locked-tip" id="tip6">提示：我的第一个使徒（英文）</div>
+          <div class="locked-tip" id="tip6">提示：李恩自称什么？</div>
         </div>
         <div class="report-body" id="content6" style="display:none;">
           <p>一切都错了 一切都错了 一切都错了 一切都错了 一切都错了 一切都错了 一切都错了 一切都错了</p>
@@ -714,6 +892,8 @@ footer{background:#2e2a24;color:#a89c88;text-align:center;padding:26px 20px;font
           <p>从第三个月开始，她的成绩出现了明显的跃升。原本在年级里只是中上游，半年之后直接进入前列。生物单科尤其突出，几次模考都接近满分。任课老师找过我，说她像换了一个人。我听了很高兴，这是我预料中的结果，子虫的增益效应在她身上体现得很清楚。</p>
           <p>第四个月，她跟我说想参加生物工程大赛。我考虑了一下，同意了。她拿了第一名。</p>
           <p>那段时间我很得意。我在心里给自己记了一笔：这套系统是可行的，风险是可控的。接下来要做的，是把样本扩大，把数据做扎实。</p>
+          <p>说到样本，其实在她之前，我并不是完全没有准备。高一高二那两年，我已经在生物组里陆续接触过几个学生。<b>唐思远、陈墨</b>，都是那批人里的。<b>他们都不是我真正意义上的"第一个"受体</b>，而是早期摸索阶段的一部分。反应不算理想，有人失眠，有人情绪波动，后来都停了。毕业之后，我把他们的记录单独归档了。</p>
+          <p>真正让我觉得"这条路能走下去"的，还是她。</p>
           <p>这个想法其实我早就有了。一只子虫，样本量太小，发不了有分量的论文。我需要更多受体。</p>
           <p>学校里最合适的目标，就是生物竞赛小组的那批学生。他们常来实验室，对我有信任，也习惯了这里的一切。他们不会怀疑我递过去的东西。</p>
           <p>我开始着手准备。一切都在我的计划之中。</p>
@@ -728,9 +908,9 @@ footer{background:#2e2a24;color:#a89c88;text-align:center;padding:26px 20px;font
           <p>我让李恩在课后当着几个同学的面，故意把那盒牛奶推开，说她不想喝。我当场把声音提了起来，重复了一遍让她喝下去。她看了我一眼，没有再说别的，拿起来喝了。整个过程很短，但看的人足够多。</p>
           <p>后来他们再拿到牛奶，没有人再问为什么。这就是我想要的效果。<b>有些事情不需要解释，只需要让他们看到后果。</b></p>
           <p>一切都很顺利。</p>
-          <p>林凯是第一个。他性格原本内向，用药之后反而安静得过分，配合度极高。我以单独辅导的名义给他注入了子虫。之后是第二个，第三个。他们都没有表现出明显的异样，甚至有些人的成绩还出现了短暂提升。</p>
+          <p>这一次选中的是生物竞赛组的几个学生。<b>林凯不是第一个，也不会是最后一个</b>。他性格原本内向，用药之后反而安静得过分，配合度极高。我以单独辅导的名义给他注入了子虫。之后是第二个，第三个。他们都没有表现出明显的异样，甚至有些人的成绩还出现了短暂提升。</p>
           <p>样本在累积，数据在扩大，离那个目标越来越近。我甚至已经开始设想论文的框架，设想自己站在台上演讲的样子。</p>
-          <p>这半年里，她偶尔会来实验室坐一会儿，问问进展。她说得不多，大多数时候只是听，然后点点头。我有时候会跟她讲讲下一步的打算，她听了会说"这样挺好"。她的建议我一向是参考的，毕竟她是第一个受体，对这套系统有发言权。但决定权始终在我手里。</p>
+          <p>这半年里，她偶尔会来实验室坐一会儿，问问进展。她说得不多，大多数时候只是听，然后点点头。我有时候会跟她讲讲下一步的打算，她听了会说"这样挺好"。她的建议我一向是参考的，毕竟她是最早的那一批，对这套系统有发言权。但决定权始终在我手里。</p>
           <p>我很清楚自己在做什么。</p>
           <p>我离目标越来越近了。</p>
         </div>
@@ -748,146 +928,421 @@ footer{background:#2e2a24;color:#a89c88;text-align:center;padding:26px 20px;font
   <footer>
     <div class="footer-links">寄望实验室 · 内部资料 · 请勿外传</div>
     <p>biologyhope · 寄望实验室内部论坛</p>
-    <p>Copyright © 1902-2024 湖南省宜州市湘西第十三中学 版权所有</p>
+    <p>Copyright © 1902-2024 福建省白州市瑾才中学 版权所有</p>
     <p style="margin-top:8px;font-size:12px;">本页面为学习模仿用途，非官方站点</p>
   </footer>
 </section>
 
 <script>
-function showPage(id){
-  document.querySelectorAll('.page').forEach(function(p){p.classList.remove('active');});
-  document.getElementById(id).classList.add('active');
-  window.scrollTo(0,0);
-  if(id==='page-biologyhope'){playIntro();}
+/* ============================================================
+   状态
+   ============================================================ */
+const LAB_KEY  = 'arg_lab_logged_in';
+const LOG6_KEY = 'arg_log6_unlocked';
+const MAIL_KEY = 'arg_mail_read';
+
+let labLoggedIn = false;
+let log6Unlocked = false;
+let mailAnimating = false;
+
+const MAIL_MESSAGES = [
+  '你为什么可以登陆我的账号',
+  '你到底是谁？怎么知道我的账号的，明明……',
+  '你……不是我的学生对吧，至少，没有被控制……',
+  '只要不是李恩……就可以了。',
+  '既然都看到了，你应该知道了吧，我是罪人。',
+  '#RETURN-12930# 这是……一个密钥，可以用在特定的搜索栏中，来将网页返回到过去一个时间上。',
+  '我只能帮到这了……'
+];
+
+/* ============================================================
+   持久化恢复
+   ============================================================ */
+function restoreLabState() {
+  var u = null;
+  try { u = localStorage.getItem(LAB_KEY); } catch (e) {}
+
+  if (u) {
+    labLoggedIn = true;
+    var bar = document.getElementById('labLoginBar');
+    var area = document.getElementById('labUserArea');
+    var name = document.getElementById('labUsername');
+    if (bar && area && name) {
+      bar.style.display = 'none';
+      area.style.display = 'flex';
+      name.textContent = u;
+    }
+  }
+
+  var unlockedFlag = null;
+  try { unlockedFlag = localStorage.getItem(LOG6_KEY); } catch (e) {}
+
+  if (unlockedFlag) {
+    log6Unlocked = true;
+    var lock = document.getElementById('lockBox6');
+    var content = document.getElementById('content6');
+    if (lock && content) {
+      lock.style.display = 'none';
+      content.style.display = 'block';
+    }
+    var mailRead = null;
+    try { mailRead = localStorage.getItem(MAIL_KEY); } catch (e) {}
+    if (!mailRead) {
+      var badge = document.getElementById('mailBadge');
+      if (badge) {
+        badge.classList.add('show');
+        badge.classList.add('pulse');
+      }
+    }
+  }
+
+  updateMailBtn();
+  renderMail();
 }
 
-function goHome(secId){
-  document.querySelectorAll('.page').forEach(function(p){p.classList.remove('active');});
+function updateMailBtn() {
+  var btn = document.getElementById('mailBtn');
+  if (!btn) return;
+
+  var labPage = document.getElementById('page-biologyhope');
+  var reportPage = document.getElementById('page-report');
+  var onLab = labPage && labPage.classList.contains('active');
+  var onReport = reportPage && reportPage.classList.contains('active');
+
+  if (labLoggedIn && (onLab || onReport)) {
+    btn.classList.add('show');
+  } else {
+    btn.classList.remove('show');
+    var panel = document.getElementById('mailPanel');
+    if (panel) panel.classList.remove('open');
+  }
+}
+
+function makeMailItem(text) {
+  return '<div class="mail-item">' +
+    '<div class="m-meta"><span class="m-from">Rockson</span>2024-08-11 02:14</div>' +
+    text +
+  '</div>';
+}
+
+function renderMail() {
+  var body = document.getElementById('mailBody');
+  if (!body) return;
+
+  if (!log6Unlocked) {
+    body.innerHTML = '<div class="mail-empty">暂无新信息</div>';
+    return;
+  }
+
+  var played = null;
+  try { played = localStorage.getItem(MAIL_KEY); } catch (e) {}
+
+  if (played) {
+    body.innerHTML = MAIL_MESSAGES.map(makeMailItem).join('');
+  } else {
+    body.innerHTML = '';
+  }
+}
+
+function startMailSequence() {
+  if (mailAnimating) return;
+  var played = null;
+  try { played = localStorage.getItem(MAIL_KEY); } catch (e) {}
+  if (played) return;
+
+  mailAnimating = true;
+
+  var body = document.getElementById('mailBody');
+  if (!body) { mailAnimating = false; return; }
+  body.innerHTML = '';
+
+  var i = 0;
+  function next() {
+    if (i >= MAIL_MESSAGES.length) {
+      mailAnimating = false;
+      try { localStorage.setItem(MAIL_KEY, '1'); } catch (e) {}
+      return;
+    }
+    body.insertAdjacentHTML('beforeend', makeMailItem(MAIL_MESSAGES[i]));
+    body.scrollTop = body.scrollHeight;
+    i++;
+    if (i < MAIL_MESSAGES.length) {
+      setTimeout(next, 1100 + Math.random() * 500);
+    } else {
+      mailAnimating = false;
+      try { localStorage.setItem(MAIL_KEY, '1'); } catch (e) {}
+    }
+  }
+  next();
+}
+
+function toggleMail() {
+  var panel = document.getElementById('mailPanel');
+  if (!panel) return;
+  panel.classList.toggle('open');
+
+  if (panel.classList.contains('open')) {
+    var badge = document.getElementById('mailBadge');
+    if (badge) {
+      badge.classList.remove('show');
+      badge.classList.remove('pulse');
+    }
+    if (log6Unlocked) {
+      var played = null;
+      try { played = localStorage.getItem(MAIL_KEY); } catch (e) {}
+      if (!played) startMailSequence();
+    }
+  }
+}
+
+/* ============================================================
+   红字雨
+   ============================================================ */
+function startTextRain() {
+  var old = document.getElementById('textRain');
+  if (old) old.remove();
+
+  var rain = document.createElement('div');
+  rain.id = 'textRain';
+  rain.className = 'text-rain';
+
+  var words = [
+    '我是罪人',
+    '李恩……',
+    '一切都错了',
+    '不可逆转的后果',
+    '金蚕虫不是虫',
+    '为了赎罪'
+  ];
+
+  for (var i = 0; i < 140; i++) {
+    var span = document.createElement('span');
+    span.textContent = words[Math.floor(Math.random() * words.length)];
+    span.style.left = (Math.random() * 100) + '%';
+    span.style.fontSize = (12 + Math.random() * 22) + 'px';
+    span.style.animationDelay = (Math.random() * 3) + 's';
+    span.style.animationDuration = (2.4 + Math.random() * 3.6) + 's';
+    rain.appendChild(span);
+  }
+
+  document.body.appendChild(rain);
+
+  setTimeout(function() { rain.remove(); }, 9500);
+}
+
+/* ============================================================
+   页面切换
+   ============================================================ */
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(function(p) {
+    p.classList.remove('active');
+  });
+  var target = document.getElementById(id);
+  if (target) target.classList.add('active');
+  window.scrollTo(0, 0);
+  if (id === 'page-biologyhope') playIntro();
+  updateMailBtn();
+}
+
+function goHome(secId) {
+  document.querySelectorAll('.page').forEach(function(p) {
+    p.classList.remove('active');
+  });
   document.getElementById('page-home').classList.add('active');
-  if(secId){
-    setTimeout(function(){
-      var el=document.getElementById(secId);
-      if(el){el.scrollIntoView({behavior:'smooth',block:'start'});}
-    },60);
-  }else{
-    window.scrollTo(0,0);
+  if (secId) {
+    setTimeout(function() {
+      var el = document.getElementById(secId);
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 60);
+  } else {
+    window.scrollTo(0, 0);
   }
+  updateMailBtn();
 }
 
-function doSearch(){
-  var keyword=document.getElementById('siteSearch').value.trim();
-  if(keyword==='林凯'){showPage('page-linkai');return;}
-  if(keyword==='罗克生'){showPage('page-luokesheng');return;}
-  if(keyword==='李恩'){showPage('page-lien');return;}
-  if(keyword==='biologyhope'){showPage('page-biologyhope');return;}
-  var key=keyword.toLowerCase();
-  var cards=document.querySelectorAll('#newsGrid .news-card');
-  var found=0;
-  cards.forEach(function(card){
-    var text=card.textContent.toLowerCase();
-    if(!key||text.indexOf(key)>-1){card.classList.remove('hidden');found++;}
-    else{card.classList.add('hidden');}
+/* ============================================================
+   搜索
+   ============================================================ */
+function doSearch() {
+  var keyword = document.getElementById('siteSearch').value.trim();
+  if (keyword === '林凯') { showPage('page-linkai'); return; }
+  if (keyword === '罗克生') { showPage('page-luokesheng'); return; }
+  if (keyword === '李恩') { showPage('page-lien'); return; }
+  if (keyword === 'biologyhope') { showPage('page-biologyhope'); return; }
+  var key = keyword.toLowerCase();
+  var cards = document.querySelectorAll('#newsGrid .news-card');
+  var found = 0;
+  cards.forEach(function(card) {
+    var text = card.textContent.toLowerCase();
+    if (!key || text.indexOf(key) > -1) {
+      card.classList.remove('hidden');
+      found++;
+    } else {
+      card.classList.add('hidden');
+    }
   });
-  document.getElementById('newsNoResult').style.display=found?'none':'block';
+  document.getElementById('newsNoResult').style.display = found ? 'none' : 'block';
 }
 
-function searchPosts(){
-  var keyword=document.getElementById('forumSearch').value.trim();
-  if(keyword==='林凯'){showPage('page-linkai-forum');return;}
-  if(keyword==='罗克生'){showPage('page-luokesheng-forum');return;}
-  if(keyword==='李恩'){showPage('page-lien-forum');return;}
-  var key=keyword.toLowerCase();
-  var posts=document.querySelectorAll('#postList .forum-item');
-  var found=0;
-  posts.forEach(function(post){
-    var text=post.textContent.toLowerCase();
-    if(!key||text.indexOf(key)>-1){post.classList.remove('hidden');found++;}
-    else{post.classList.add('hidden');}
+function searchPosts() {
+  var keyword = document.getElementById('forumSearch').value.trim();
+  if (keyword === '林凯') { showPage('page-linkai-forum'); return; }
+  if (keyword === '罗克生') { showPage('page-luokesheng-forum'); return; }
+  if (keyword === '李恩') { showPage('page-lien-forum'); return; }
+  var key = keyword.toLowerCase();
+  var posts = document.querySelectorAll('#postList .forum-item');
+  var found = 0;
+  posts.forEach(function(post) {
+    var text = post.textContent.toLowerCase();
+    if (!key || text.indexOf(key) > -1) {
+      post.classList.remove('hidden');
+      found++;
+    } else {
+      post.classList.add('hidden');
+    }
   });
-  document.getElementById('postNoResult').style.display=found?'none':'block';
+  document.getElementById('postNoResult').style.display = found ? 'none' : 'block';
 }
 
-function addPost(){
-  var title=document.getElementById('postTitle').value.trim();
-  var content=document.getElementById('postContent').value.trim();
-  if(!title||!content){alert('请填写标题和内容');return;}
-  var now=new Date();
-  var time=now.getFullYear()+'-'+String(now.getMonth()+1).padStart(2,'0')+'-'+String(now.getDate()).padStart(2,'0')+' '+String(now.getHours()).padStart(2,'0')+':'+String(now.getMinutes()).padStart(2,'0');
-  var item=document.createElement('div');
-  item.className='forum-item';
-  item.innerHTML='<div class="f-avatar">我</div><div class="f-body"><div class="f-meta"><span class="name">我</span>'+time+'</div><h3></h3><p></p><div class="f-actions"><span>👍 0</span><span>💬 0</span></div></div>';
-  item.querySelector('h3').textContent=title;
-  item.querySelector('p').textContent=content;
+/* ============================================================
+   发帖
+   ============================================================ */
+function addPost() {
+  var title = document.getElementById('postTitle').value.trim();
+  var content = document.getElementById('postContent').value.trim();
+  if (!title || !content) { alert('请填写标题和内容'); return; }
+  var now = new Date();
+  var time = now.getFullYear() + '-' +
+    String(now.getMonth() + 1).padStart(2, '0') + '-' +
+    String(now.getDate()).padStart(2, '0') + ' ' +
+    String(now.getHours()).padStart(2, '0') + ':' +
+    String(now.getMinutes()).padStart(2, '0');
+  var item = document.createElement('div');
+  item.className = 'forum-item';
+  item.innerHTML = '<div class="f-avatar">我</div><div class="f-body"><div class="f-meta"><span class="name">我</span>' + time + '</div><h3></h3><p></p><div class="f-actions"><span>👍 0</span><span>💬 0</span></div></div>';
+  item.querySelector('h3').textContent = title;
+  item.querySelector('p').textContent = content;
   document.getElementById('postList').prepend(item);
-  document.getElementById('postTitle').value='';
-  document.getElementById('postContent').value='';
+  document.getElementById('postTitle').value = '';
+  document.getElementById('postContent').value = '';
 }
 
-function labLogin(){
-  var u=document.getElementById('labUser').value.trim();
-  var p=document.getElementById('labPass').value.trim();
-  var err=document.getElementById('labError');
-  if(u==='Rockson'&&p==='471146'){
-    err.textContent='';
-    document.getElementById('labLoginBar').style.display='none';
-    document.getElementById('labUserArea').style.display='flex';
-    document.getElementById('labUsername').textContent=u;
-  }else{
-    err.textContent='账号或密码错误';
+/* ============================================================
+   实验室登录
+   ============================================================ */
+function labLogin() {
+  try {
+    var u = document.getElementById('labUser').value.trim();
+    var p = document.getElementById('labPass').value.trim();
+    var err = document.getElementById('labError');
+
+    if (u.toLowerCase() === 'rockson' && p === '471146') {
+      err.textContent = '';
+      try { localStorage.setItem(LAB_KEY, u); } catch (e) {}
+      labLoggedIn = true;
+      document.getElementById('labLoginBar').style.display = 'none';
+      document.getElementById('labUserArea').style.display = 'flex';
+      document.getElementById('labUsername').textContent = u;
+      updateMailBtn();
+      renderMail();
+    } else {
+      err.textContent = '账号或密码错误';
+    }
+  } catch (e) {
+    var err2 = document.getElementById('labError');
+    if (err2) err2.textContent = '脚本错误：' + e.message;
   }
 }
 
-function showReport(){showPage('page-report');}
+function showReport() { showPage('page-report'); }
 
-function unlockLog6(){
-  var pass=document.getElementById('pass6').value.trim();
-  var tip=document.getElementById('tip6');
-  if(pass==='Rockson'){
-    document.getElementById('lockBox6').style.display='none';
-    document.getElementById('content6').style.display='block';
-  }else{
-    tip.textContent='密码错误。提示：我的第一个使徒（英文）';
+/* ============================================================
+   日志六解锁
+   ============================================================ */
+function unlockLog6() {
+  try {
+    var pass = document.getElementById('pass6').value.trim();
+    var tip = document.getElementById('tip6');
+
+    if (pass === '耶稣') {
+      try { localStorage.setItem(LOG6_KEY, '1'); } catch (e) {}
+      log6Unlocked = true;
+      document.getElementById('lockBox6').style.display = 'none';
+      document.getElementById('content6').style.display = 'block';
+
+      try { localStorage.removeItem(MAIL_KEY); } catch (e) {}
+      var badge = document.getElementById('mailBadge');
+      if (badge) {
+        badge.classList.add('show');
+        badge.classList.add('pulse');
+      }
+
+      var body = document.getElementById('mailBody');
+      if (body) body.innerHTML = '';
+
+      startTextRain();
+    } else {
+      tip.textContent = '密码错误。提示：西方神话';
+    }
+  } catch (e) {
+    var tip2 = document.getElementById('tip6');
+    if (tip2) tip2.textContent = '脚本错误：' + e.message;
   }
 }
 
-function genCode(){
-  var box=document.getElementById('downloadCode');
-  box.textContent='提取码：BIOH-0911-4711-4620';
+/* ============================================================
+   下载提取码
+   ============================================================ */
+function genCode() {
+  var box = document.getElementById('downloadCode');
+  box.textContent = '提取码：BIOH-0911-4711-4620';
   box.classList.add('show');
 }
 
-var introPlayed=false;
-function playIntro(){
-  if(introPlayed)return;
-  introPlayed=true;
-  var overlay=document.getElementById('introOverlay');
-  var t1=document.getElementById('introText');
-  var swarm=document.getElementById('swarm');
+/* ============================================================
+   开场动画
+   ============================================================ */
+var introPlayed = false;
+function playIntro() {
+  if (introPlayed) return;
+  introPlayed = true;
+  var overlay = document.getElementById('introOverlay');
+  var t1 = document.getElementById('introText');
+  var swarm = document.getElementById('swarm');
   overlay.classList.add('show');
   t1.classList.remove('fade-out');
-  swarm.innerHTML='';
-  var words=['寄生','同化','共存','我们一起','我们同在','神在我们脑中飞升','我我我我我我'];
-  setTimeout(function(){t1.classList.add('fade-out');},5500);
-  setTimeout(function(){
+  swarm.innerHTML = '';
+  var words = ['寄生','同化','共存','我们一起','我们同在','神在我们脑中飞升','我我我我我我'];
+  setTimeout(function() { t1.classList.add('fade-out'); }, 5500);
+  setTimeout(function() {
     overlay.classList.add('shake');
-    for(var i=0;i<250;i++){
-      var s=document.createElement('span');
-      s.textContent=words[Math.floor(Math.random()*words.length)];
-      s.style.left=(Math.random()*94)+'%';
-      s.style.top=(Math.random()*96)+'%';
-      s.style.fontSize=(11+Math.random()*32)+'px';
-      s.style.animationDelay=(Math.random()*2.2)+'s';
+    for (var i = 0; i < 250; i++) {
+      var s = document.createElement('span');
+      s.textContent = words[Math.floor(Math.random() * words.length)];
+      s.style.left = (Math.random() * 94) + '%';
+      s.style.top = (Math.random() * 96) + '%';
+      s.style.fontSize = (11 + Math.random() * 32) + 'px';
+      s.style.animationDelay = (Math.random() * 2.2) + 's';
       swarm.appendChild(s);
     }
-  },6000);
-  setTimeout(function(){overlay.classList.remove('shake');},10500);
-  setTimeout(function(){overlay.classList.add('hide');},11200);
-  setTimeout(function(){
+  }, 6000);
+  setTimeout(function() { overlay.classList.remove('shake'); }, 10500);
+  setTimeout(function() { overlay.classList.add('hide'); }, 11200);
+  setTimeout(function() {
     overlay.classList.remove('show');
     overlay.classList.remove('hide');
-    swarm.innerHTML='';
-  },12200);
+    swarm.innerHTML = '';
+  }, 12200);
 }
+
+/* ============================================================
+   初始化
+   ============================================================ */
+window.addEventListener('DOMContentLoaded', function() {
+  restoreLabState();
+  updateMailBtn();
+  renderMail();
+});
 </script>
 
 </body>
